@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>UDACITY BLOG</title>
+
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+
+	<style>
+       body { padding-top: 87px; }
+     </style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+	       	<div class="row">
+	       		<div class="col-md-10">
+	       			<h3 style="color:#FFFFFF; margin-left:2em; margin-top:1em; font-family:'Courier New', Courier, monospace"><strong> <a href="/blog" class="main-title" style="color:white">UDACITY BLOG</a> </strong></h3>
+	       		</div>
+	       	
+	     	</div>
+    	</div>
+	</nav>
+ 
+  <div>
+  {% block content %}
+  {% endblock %}
+  </div>
+<footer style="position: relative;
+margin-top: 2em;
+  height: 6em;
+  clear:both;
+  padding-top:20px;
+  background: #7ec0ee;
+  margin-bottom:1em">
+
+      <span style="margin-left:3em; color:white">Udacity blog 2016</span>
+      <br>
+
+      <span style="margin-left:3em; color:white">Email me: mamunovalisher@gmail.com</span>
+  
+
+</footer>
+
+    
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

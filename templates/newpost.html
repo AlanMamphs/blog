@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid" style="margin-top:0em; margin-bottom:3em">
+	<div class="row">
+		  <div class="col-md-4 col-sm-4 col-xs-4"> 
+		       <a href="/profile" class="btn" style="display:block">Profile</a>
+		   </div>
+		   <div class="col-md-4 col-sm-4 col-xs-4">
+		       <span href='#' class="btn" style="display:block">New Post</span>
+		   </div>
+			 <div class="col-md-4 col-sm-4 col-xs-4">
+		    <a href="/blog" class="btn" style="display:block">Blog</a>
+		  </div>
+
+	</div>
+
+
+	<div class="row">
+		<div class="col-md-2">
+			
+		</div>
+
+		<div class="col-md-7">
+			<form method="POST" role="form">
+			<legend>New Post</legend>
+		
+			<div class="form-group">
+				<label for="subject">Subject</label>
+				<input type="text" class="form-control" id="subject" name="subject" placeholder="Your Subject" value="{{subject}}">
+			</div>
+			<div class="form-group">
+				<label for="blog">Message</label>
+				<textarea id="blog" class="form-control" rows = '10' name ='content'>{{content}}</textarea>
+			</div>
+				<div class = 'error'>
+					{{error}}
+				</div>
+				<input type="submit" class="btn btn-primary" value="Submit">
+				
+		</form>
+		</div>
+	</div>
+</div>
+
+	
+
+		
+{% endblock %}

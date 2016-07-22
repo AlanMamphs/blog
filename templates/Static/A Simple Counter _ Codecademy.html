@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://www.codecademy.com/courses/a-simple-counter/1/4 -->
+<html class=" composer cc-js cc-history cc-borderimage cc-cssanimations cc-localstorage cc-cssscrollbar" dir="ltr" lang="en" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" async="" src="./A Simple Counter _ Codecademy_files/linkid.js"></script><script type="text/javascript" async="" src="./A Simple Counter _ Codecademy_files/a3w.js"></script><script type="text/javascript" async="" src="./A Simple Counter _ Codecademy_files/analytics.js"></script><script type="text/javascript" async="" src="./A Simple Counter _ Codecademy_files/track.js" id="cio-tracker" data-site-id="a0ffe98b9a714eaaeec1"></script><script src="./A Simple Counter _ Codecademy_files/cb=gapi.loaded_0" async=""></script><script id="facebook-jssdk" async="" src="./A Simple Counter _ Codecademy_files/sdk.js"></script><script type="text/javascript" async="" src="./A Simple Counter _ Codecademy_files/plusone.js" gapi_processed="true"></script><script type="text/javascript" async="" src="./A Simple Counter _ Codecademy_files/mixpanel-2.2.min.js"></script><script type="text/javascript" async="" src="./A Simple Counter _ Codecademy_files/analytics.min.js"></script><script>
+// Generic
+var root_url = "https://www.codecademy.com/";
+
+// CCDATA
+var CCDATA = CCDATA || {};  CCDATA['env'] = "production"; CCDATA['request_host'] = "www.codecademy.com"; CCDATA['request_path'] = "/courses/a-simple-counter/0/5"; CCDATA['asset_host'] = "cdn-production.codecademy.com"; CCDATA['assets_compiled'] = true; CCDATA['pollForNotifications'] = false; CCDATA['locale'] = "en"; CCDATA['API_HOST'] = "/api"; CCDATA['authenticity_token'] = "LAocGYBYe4mquOT5v07Yp8J5Kh2Y0qdLlErQ/Uf8zYg="; CCDATA['available_locales'] = "en|pt|et-EE|fa|en-US|ko|zh|fr|ja|ky-KG|en-GB|fr-FR|es-AR|pt-BR|ar|de|es|ru"; CCDATA['login_requires_captcha'] = false; CCDATA['register_requires_captcha'] = false; CCDATA['current_user'] = {"_id":"562f8a8351b887aeea000315","created_at":"2015-10-27T10:30:27-04:00","url":"http://www.codecademy.com/users/alanmamphs","username":"AlanMamphs","handle":"AlanMamphs","email":"mamunovalisher@gmail.com","name":"","profile_image_url":"https://www.gravatar.com/avatar/a6e10e0104b55b88f7320d07677b6bd7?s=140\u0026d=retro","points":345,"total_points":345,"roles":[],"ui_tour_elements":{"discovery-fullscreen":true,"course-navigator":true},"deleted":false,"authentication_token":"uTnRumMjUXmuPmwMXxWT","pro":false,"pro_ads":{"formatted_price":"19.99","price":1999,"plan_id":"proV2b","period":"month","title":"Monthly Plan"},"experiments":{"exp_payment_modal_2016_02_25":"treatment","exp_payment_ads_pro_screen_2016_02_25":"control"}}; CCDATA['composer'] = {"experiments":{},"lastHint":{},"lintHintShown":{},"backtestType":"cached_invalid_answers","course":{"_id":"4f9e82d27833050003015833","slug":"a-simple-counter","name":"A Simple Counter","projects":[{"id":"4f9e82d27833050003015835","checkpoints":[{"_id":"4f9e82d36a13410003016086","index":0,"code_reset":true,"default_files":[{"filename":"index.html","content":"\u003Chtml\u003E\r\n\u003Chead\u003E\r\n\u003Cscript type=\"text/javascript\" src=\"script.js\"\u003E\u003C/script\u003E\r\n\u003Clink rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"\u003E \r\n\u003C/head\u003E\r\n\u003Cbody\u003E\r\n\r\n    \u003Cdiv class=\"box\"\u003E    \r\n        \u003Clabel for=\"qty\"\u003E\u003Cabbr title=\"Quantity\"\u003EQty\u003C/abbr\u003E\u003C/label\u003E\r\n        \u003Cinput id=\"qty\" value=\"0\" /\u003E\r\n        \u003Cbutton id=\"down\" onclick=\"modify_qty(-1)\"\u003E-1\u003C/button\u003E\r\n        \u003Cbutton id=\"up\" onclick=\"modify_qty(1)\"\u003E+1\u003C/button\u003E\r\n    \u003C/div\u003E\r\n\r\n\u003C/body\u003E\r\n\u003C/html\u003E"},{"filename":"style.css","content":"body {\r\n    font-family: helvetica, arial, verdana, sans-serif;\r\n}\r\n\r\ninput {\r\n\tfont-size: 2.4em;\r\n\tbackground-color: transparent;\r\n\ttext-align: center;\r\n\tborder-width: 0;\r\n\twidth: 100%;\r\n\tmargin: 0 0 .1em 0;\r\n\tcolor: #fff;\r\n}\r\n\r\nlabel {\r\n\tdisplay: block;\r\n\tfont-size: .8em;\r\n}\r\n\r\nbutton {\r\n\t/* basics */\r\n\tcolor: #444;\r\n\tbackground-color: #B5B198;\r\n\t/* rounded corners */\r\n    -webkit-border-radius: 6px;\r\n          border-radius: 6px; \r\n    -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;\r\n\tfont-weight: bold;\r\n\r\n}\r\n\r\nbutton:hover, button:active, button:focus {\r\n\tbackground-color: #CBC7AE;\r\n}\r\n\r\n.box {\r\n\t/* basics */\r\n\tbackground-color: #444;\r\n\tcolor: #C4BE92;\r\n    text-align: center;\r\n\r\n\t/* rounded corners */\r\n    -webkit-border-radius: 12px;\r\n    border-radius: 12px; \r\n    -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;\r\n    padding: .8em .8em 1em;\r\n    width: 8em;\r\n\tmargin: 0 auto;\t\r\n  \t-webkit-box-shadow: 0px 0px 12px 0px #000;\r\n    box-shadow: 0px 0px 12px 0px #000;\r\n  \r\n}"},{"filename":"script.js","content":"function modify_qty(val) {\n    var qty = document.getElementById('qty').value;\n    var new_qty = parseInt(qty,10) + val;\n    \n    if (new_qty \u003C 0) {\n        new_qty = 0;\n    }\n    \n    document.getElementById('qty').value = new_qty;\n    return new_qty;\n}"}],"entry":"For this project, we're going to build a neat little counter or quantity picker. We'll need some basic HTML and a smidgen of Javascript. Then we'll finish by styling it all up with CSS.\r\n\r\nThis can be used as part of a form or for something bigger.","entry_html":"\u003Cp\u003EFor this project, we\u0026#39;re going to build a neat little counter or quantity picker. We\u0026#39;ll need some basic HTML and a smidgen of Javascript. Then we\u0026#39;ll finish by styling it all up with CSS.\u003C/p\u003E\n\n\u003Cp\u003EThis can be used as part of a form or for something bigger.\u003C/p\u003E\n","external_resources":["https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"],"hint":null,"hint_html":null,"instruction":"Preview what we will be creating by checking out the Result tab. Click `Run` to begin building this counter!","instruction_html":"\u003Cp\u003EPreview what we will be creating by checking out the Result tab. Click \u003Ccode\u003ERun\u003C/code\u003E to begin building this counter!\u003C/p\u003E\n","name":"Overview","test_functions":"return true;","pro_ad":{"params":{"header":"Not sure where to start?","body":"Let us set you up for success with a personalized learning path.","hint":"Get live, fast support from Codecademy Advisors when you get stuck.","utm_content":"wheretostart","image_url":"https://s3.amazonaws.com/codecademy-images/pro/variants-path.svg","utm_campaign":"ad_revamp_apr_2016","utm_source":"codecademy_platform"},"url":"/pro"},"completed":true,"latest_files":[{"filename":"index.html","content":"\u003Chtml\u003E\r\n\u003Chead\u003E\r\n\u003Cscript type=\"text/javascript\" src=\"script.js\"\u003E\u003C/script\u003E\r\n\u003Clink rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"\u003E \r\n\u003C/head\u003E\r\n\u003Cbody\u003E\r\n\r\n    \u003Cdiv class=\"box\"\u003E    \r\n        \u003Clabel for=\"qty\"\u003E\u003Cabbr title=\"Quantity\"\u003EQty\u003C/abbr\u003E\u003C/label\u003E\r\n        \u003Cinput id=\"qty\" value=\"0\" /\u003E\r\n        \u003Cbutton id=\"down\" onclick=\"modify_qty(-1)\"\u003E-1\u003C/button\u003E\r\n        \u003Cbutton id=\"up\" onclick=\"modify_qty(1)\"\u003E+1\u003C/button\u003E\r\n    \u003C/div\u003E\r\n\r\n\u003C/body\u003E\r\n\u003C/html\u003E"},{"filename":"style.css","content":"body {\r\n    font-family: helvetica, arial, verdana, sans-serif;\r\n}\r\n\r\ninput {\r\n\tfont-size: 2.4em;\r\n\tbackground-color: transparent;\r\n\ttext-align: center;\r\n\tborder-width: 0;\r\n\twidth: 100%;\r\n\tmargin: 0 0 .1em 0;\r\n\tcolor: #fff;\r\n}\r\n\r\nlabel {\r\n\tdisplay: block;\r\n\tfont-size: .8em;\r\n}\r\n\r\nbutton {\r\n\t/* basics */\r\n\tcolor: #444;\r\n\tbackground-color: #B5B198;\r\n\t/* rounded corners */\r\n    -webkit-border-radius: 6px;\r\n          border-radius: 6px; \r\n    -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;\r\n\tfont-weight: bold;\r\n\r\n}\r\n\r\nbutton:hover, button:active, button:focus {\r\n\tbackground-color: #CBC7AE;\r\n}\r\n\r\n.box {\r\n\t/* basics */\r\n\tbackground-color: #444;\r\n\tcolor: #C4BE92;\r\n    text-align: center;\r\n\r\n\t/* rounded corners */\r\n    -webkit-border-radius: 12px;\r\n    border-radius: 12px; \r\n    -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;\r\n    padding: .8em .8em 1em;\r\n    width: 8em;\r\n\tmargin: 0 auto;\t\r\n  \t-webkit-box-shadow: 0px 0px 12px 0px #000;\r\n    box-shadow: 0px 0px 12px 0px #000;\r\n  \r\n}"},{"filename":"script.js","content":"function modify_qty(val) {\n    var qty = document.getElementById('qty').value;\n    var new_qty = parseInt(qty,10) + val;\n    \n    if (new_qty \u003C 0) {\n        new_qty = 0;\n    }\n    \n    document.getElementById('qty').value = new_qty;\n    return new_qty;\n}"}],"preview_button":true,"is_current_checkpoint":false},{"_id":"4f9f159f33d300000300a468","index":1,"code_reset":true,"default_files":[{"filename":"index.html","content":"\u003Chtml\u003E\r\n\u003Chead\u003E\r\n\u003C!-- no normal header stuff to keep it simple --\u003E\r\n\u003C/head\u003E\r\n\u003Cbody\u003E\r\n\r\n\u003C/body\u003E\r\n\u003C/html\u003E"}],"entry":"We'll be creating an HTML page with an input field to hold and display the current number and two buttons to dial that number up and down.\r\n\r\nLet's start by creating the input box.","entry_html":"\u003Cp\u003EWe\u0026#39;ll be creating an HTML page with an input field to hold and display the current number and two buttons to dial that number up and down.\u003C/p\u003E\n\n\u003Cp\u003ELet\u0026#39;s start by creating the input box.\u003C/p\u003E\n","external_resources":[],"hint":"Recall that a self-closing input tag looks like this: `\u003Cinput id=\"myTag\" value=\"42\" /\u003E`","hint_html":"\u003Cp\u003ERecall that a self-closing input tag looks like this: \u003Ccode\u003E\u0026lt;input id=\u0026quot;myTag\u0026quot; value=\u0026quot;42\u0026quot; /\u0026gt;\u003C/code\u003E\u003C/p\u003E\n","instruction":"1. Add a self closing `\u003Cinput\u003E` tag inside our HTML body\r\n2. Set the tag's `id` attribute to `qty`\r\n3. Set the default value of the input box to zero. To do so, set the `value` attribute to `0`","instruction_html":"\u003Col\u003E\n\u003Cli\u003EAdd a self closing \u003Ccode\u003E\u0026lt;input\u0026gt;\u003C/code\u003E tag inside our HTML body\u003C/li\u003E\n\u003Cli\u003ESet the tag\u0026#39;s \u003Ccode\u003Eid\u003C/code\u003E attribute to \u003Ccode\u003Eqty\u003C/code\u003E\u003C/li\u003E\n\u003Cli\u003ESet the default value of the input box to zero. To do so, set the \u003Ccode\u003Evalue\u003C/code\u003E attribute to \u003Ccode\u003E0\u003C/code\u003E\u003C/li\u003E\n\u003C/ol\u003E\n","name":"Input Fields","test_functions":"if (code.html.match(/\\\u003Cinput.*\\s*\\/\\\u003E/)===null) {\r\n  return 'Did you remember to close the \"input\" tag?';\r\n}\r\nif($('#qty').length \u003C 1){\r\n    return \"Hmm, does your input box has the id of 'qty'?\";\r\n}\r\nif($('#qty').attr('value') !== '0') {\r\n    return \"Did you set the value attribute of the input to 0?\"\r\n}\r\nreturn true;\r\n","pro_ad":{"params":{"header":"Not sure where to start?","body":"Let us set you up for success with a personalized learning path.","hint":"Get live, fast support from Codecademy Advisors when you get stuck.","utm_content":"wheretostart","image_url":"https://s3.amazonaws.com/codecademy-images/pro/variants-path.svg","utm_campaign":"ad_revamp_apr_2016","utm_source":"codecademy_platform"},"url":"/pro"},"completed":true,"latest_files":[{"filename":"index.html","content":"\u003Chtml\u003E\r\n\u003Chead\u003E\r\n\u003C!-- no normal header stuff to keep it simple --\u003E\r\n\u003C/head\u003E\r\n\u003Cbody\u003E\r\n    \u003Cinput id = 'qty' value=0 /\u003E\r\n\u003C/body\u003E\r\n\u003C/html\u003E"}],"preview_button":true,"is_current_checkpoint":false},{"_id":"4fa1e0e9ab902e0003021d1d","index":2,"code_reset":true,"default_files":[{"filename":"index.html","content":"\u003Chtml\u003E\r\n\u003Chead\u003E\r\n\u003C/head\u003E\r\n\u003Cbody\u003E\r\n\r\n\u003Cinput id=\"qty\" value=\"0\" /\u003E\r\n\r\n\u003C!-- Add the buttons here --\u003E\r\n\r\n\u003C/body\u003E\r\n\u003C/html\u003E"}],"entry":"Let's add some buttons now. HTML provides us with the `\u003Cbutton\u003E` tag to make this pretty simple. It has both an opening and closing tag and can have content inside it like images or text.\n*We are using `\u003Cbutton\u003E` instead of `\u003Cinput type='button'\u003E` to illustrate a different way to do clickable tags.*\n\nFor our purposes, we'll put some text in there for **-1** and **+1**.","entry_html":"\u003Cp\u003ELet\u0026#39;s add some buttons now. HTML provides us with the \u003Ccode\u003E\u0026lt;button\u0026gt;\u003C/code\u003E tag to make this pretty simple. It has both an opening and closing tag and can have content inside it like images or text.\u003Cbr\u003E\n\u003Cem\u003EWe are using \u003Ccode\u003E\u0026lt;button\u0026gt;\u003C/code\u003E instead of \u003Ccode\u003E\u0026lt;input type=\u0026#39;button\u0026#39;\u0026gt;\u003C/code\u003E to illustrate a different way to do clickable tags.\u003C/em\u003E\u003C/p\u003E\n\n\u003Cp\u003EFor our purposes, we\u0026#39;ll put some text in there for \u003Cstrong\u003E-1\u003C/strong\u003E and \u003Cstrong\u003E+1\u003C/strong\u003E.\u003C/p\u003E\n","external_resources":["https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"],"hint":"Button tags should look like this: `\u003Cbutton\u003E+1\u003C/button\u003E` and `\u003Cbutton\u003E-1\u003C/button\u003E`","hint_html":"\u003Cp\u003EButton tags should look like this: \u003Ccode\u003E\u0026lt;button\u0026gt;+1\u0026lt;/button\u0026gt;\u003C/code\u003E and \u003Ccode\u003E\u0026lt;button\u0026gt;-1\u0026lt;/button\u0026gt;\u003C/code\u003E\u003C/p\u003E\n","instruction":"1. Create two `\u003Cbutton\u003E` tags after the `\u003Cinput\u003E` tag.\r\n2. Set the text of one to `+1` and the text of the other to `-1`","instruction_html":"\u003Col\u003E\n\u003Cli\u003ECreate two \u003Ccode\u003E\u0026lt;button\u0026gt;\u003C/code\u003E tags after the \u003Ccode\u003E\u0026lt;input\u0026gt;\u003C/code\u003E tag.\u003C/li\u003E\n\u003Cli\u003ESet the text of one to \u003Ccode\u003E+1\u003C/code\u003E and the text of the other to \u003Ccode\u003E-1\u003C/code\u003E\u003C/li\u003E\n\u003C/ol\u003E\n","name":"Button Me Up","test_functions":"var buttons = $('button');\r\nif (buttons.size() \u003C 2) {\r\n    return 'Check that you have added two buttons';\r\n}\r\n\r\n// Count buttons\r\nvar plusOne = 0,\r\n    minusOne = 0;\r\nfor (var i=0; i\u003Cbuttons.length; i++) {\r\n    var text = $(buttons[i]).text();\r\n    if (text === '+1') {\r\n        plusOne++;\r\n    } else if (text === '-1') {\r\n        minusOne++;\r\n    }\r\n}\r\n\r\nif (plusOne \u003C 1) {\r\n    return \"Look's like there no button with text +1\";\r\n}\r\nif (minusOne \u003C 1) {\r\n    return \"Look's like there no button with text -1\";\r\n}\r\nreturn true;","pro_ad":{"params":{"header":"Not sure where to start?","body":"Let us set you up for success with a personalized learning path.","hint":"Get live, fast support from Codecademy Advisors when you get stuck.","utm_content":"wheretostart","image_url":"https://s3.amazonaws.com/codecademy-images/pro/variants-path.svg","utm_campaign":"ad_revamp_apr_2016","utm_source":"codecademy_platform"},"url":"/pro"},"completed":true,"latest_files":[{"filename":"index.html","content":"\u003Chtml\u003E\r\n\u003Chead\u003E\r\n\u003C/head\u003E\r\n\u003Cbody\u003E\r\n\r\n\u003Cinput id=\"qty\" value=\"0\" /\u003E\r\n\r\n\u003C!-- Add the buttons here --\u003E\r\n\u003Cbutton\u003E+1\u003C/button\u003E\r\n\u003Cbutton\u003E-1\u003C/button\u003E\r\n\u003C/body\u003E\r\n\u003C/html\u003E"}],"preview_button":true,"is_current_checkpoint":false},{"_id":"4fa1e574e98d760003022287","index":3,"code_reset":true,"default_files":[{"filename":"index.html","content":"\u003Chtml\u003E\r\n\u003Chead\u003E\r\n\u003C/head\u003E\r\n\u003Cbody\u003E\r\n\r\n\u003Cinput id=\"qty\" value=\"0\" /\u003E\r\n\u003Cbutton\u003E-1\u003C/button\u003E\r\n\u003Cbutton\u003E+1\u003C/button\u003E\r\n\r\n\u003C/body\u003E\r\n\u003C/html\u003E"}],"entry":"Right now, a user seeing this page has no idea what they are actually looking at. What does the number mean? To fix this, let's give the input box a *label*.\r\n\r\nLabels are used on form fields to give them a description or title. Furthermore, you connect a `\u003Clabel\u003E` to an `\u003Cinput\u003E` using the `for` *attribute*, which holds the `id` of the input tag. The effect is that clicking on the label will select the corresponding input field.","entry_html":"\u003Cp\u003ERight now, a user seeing this page has no idea what they are actually looking at. What does the number mean? To fix this, let\u0026#39;s give the input box a \u003Cem\u003Elabel\u003C/em\u003E.\u003C/p\u003E\n\n\u003Cp\u003ELabels are used on form fields to give them a description or title. Furthermore, you connect a \u003Ccode\u003E\u0026lt;label\u0026gt;\u003C/code\u003E to an \u003Ccode\u003E\u0026lt;input\u0026gt;\u003C/code\u003E using the \u003Ccode\u003Efor\u003C/code\u003E \u003Cem\u003Eattribute\u003C/em\u003E, which holds the \u003Ccode\u003Eid\u003C/code\u003E of the input tag. The effect is that clicking on the label will select the corresponding input field.\u003C/p\u003E\n","external_resources":["https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"],"hint":"If I wanted to link a label to `\u003Cinput id=\"myInput\" /\u003E`, I would write `\u003Clabel for=\"myInput\"\u003EmyLabel\u003C/label\u003E`.","hint_html":"\u003Cp\u003EIf I wanted to link a label to \u003Ccode\u003E\u0026lt;input id=\u0026quot;myInput\u0026quot; /\u0026gt;\u003C/code\u003E, I would write \u003Ccode\u003E\u0026lt;label for=\u0026quot;myInput\u0026quot;\u0026gt;myLabel\u0026lt;/label\u0026gt;\u003C/code\u003E.\u003C/p\u003E\n","instruction":"1. Create a label tag with the text \"Quantity\"\r\n2. Use the `for` attribute to connect the label with the input named `qty`","instruction_html":"\u003Col\u003E\n\u003Cli\u003ECreate a label tag with the text \u0026quot;Quantity\u0026quot;\u003C/li\u003E\n\u003Cli\u003EUse the \u003Ccode\u003Efor\u003C/code\u003E attribute to connect the label with the input named \u003Ccode\u003Eqty\u003C/code\u003E\u003C/li\u003E\n\u003C/ol\u003E\n","name":"Hook Up the Label","test_functions":"if ($('label').size() \u003C 1) {\r\n    return \"Did you add a label tag?\"\r\n}\r\nif (!($('label').text() === 'Quantity' || $('label').text() === 'quantity' || $('label').text() === 'Quantity ')) {\r\n   return \"Does your label have the text 'Quantity'? \"+  $('label').text();\r\n}\r\nif ($('label').attr('for') !=='qty') {\r\n    return \"Did you link the label to the input with ID \u003Cem\u003Eqty\u003C/em\u003E using the \u003Ccode\u003Efor\u003C/code\u003E attribute?\";\r\n}\r\nreturn true;","pro_ad":{"params":{"header":"Not sure where to start?","body":"Let us set you up for success with a personalized learning path.","hint":"Get live, fast support from Codecademy Advisors when you get stuck.","utm_content":"wheretostart","image_url":"https://s3.amazonaws.com/codecademy-images/pro/variants-path.svg","utm_campaign":"ad_revamp_apr_2016","utm_source":"codecademy_platform"},"url":"/pro"},"completed":true,"latest_files":[{"filename":"index.html","content":"\u003Chtml\u003E\r\n\u003Chead\u003E\r\n\u003C/head\u003E\r\n\u003Cbody\u003E\r\n\u003Clabel for='qty'\u003EQuantity\u003C/label\u003E\r\n\u003Cinput id=\"qty\" value=\"0\" /\u003E\r\n\u003Cbutton\u003E-1\u003C/button\u003E\r\n\u003Cbutton\u003E+1\u003C/button\u003E\r\n\r\n\u003C/body\u003E\r\n\u003C/html\u003E"}],"preview_button":true,"is_current_checkpoint":false},{"_id":"4fa1ead48173f60003022fc0","index":4,"code_reset":true,"default_files":[{"filename":"index.html","content":"\u003Chtml\u003E\r\n\u003Chead\u003E\r\n\u003C/head\u003E\r\n\u003Cbody\u003E\r\n\u003Clabel for=\"qty\"\u003EQuantity\u003C/label\u003E\r\n\u003Cinput id=\"qty\" value=\"0\" /\u003E\r\n\u003Cbutton\u003E-1\u003C/button\u003E\r\n\u003Cbutton\u003E+1\u003C/button\u003E\r\n\r\n\u003C/body\u003E\r\n\u003C/html\u003E"}],"entry":"Nice work on the HTML! We now have a nice framework for our counter. The label is hooked up correctly: if you click on the text in the label, the corresponding input box will focus.\r\n\r\nIt doesn't look too hot right now and the buttons don't do anything, but that's where the Javascript and CSS come in to play. Let's get started on the Javascript now.","entry_html":"\u003Cp\u003ENice work on the HTML! We now have a nice framework for our counter. The label is hooked up correctly: if you click on the text in the label, the corresponding input box will focus.\u003C/p\u003E\n\n\u003Cp\u003EIt doesn\u0026#39;t look too hot right now and the buttons don\u0026#39;t do anything, but that\u0026#39;s where the Javascript and CSS come in to play. Let\u0026#39;s get started on the Javascript now.\u003C/p\u003E\n","external_resources":[],"hint":null,"hint_html":null,"instruction":"Click `Run` to continue onto the next section -- creating some Javascript!","instruction_html":"\u003Cp\u003EClick \u003Ccode\u003ERun\u003C/code\u003E to continue onto the next section -- creating some Javascript!\u003C/p\u003E\n","name":"Done with the HTML!","test_functions":"return true;","pro_ad":{"params":{"header":"Not sure where to start?","body":"Let us set you up for success with a personalized learning path.","hint":"Get live, fast support from Codecademy Advisors when you get stuck.","utm_content":"wheretostart","image_url":"https://s3.amazonaws.com/codecademy-images/pro/variants-path.svg","utm_campaign":"ad_revamp_apr_2016","utm_source":"codecademy_platform"},"url":"/pro"},"completed":true,"latest_files":[{"filename":"index.html","content":"\u003Chtml\u003E\r\n\u003Chead\u003E\r\n\u003C/head\u003E\r\n\u003Cbody\u003E\r\n\u003Clabel for=\"qty\"\u003EQuantity\u003C/label\u003E\r\n\u003Cinput id=\"qty\" value=\"0\" /\u003E\r\n\u003Cbutton\u003E-1\u003C/button\u003E\r\n\u003Cbutton\u003E+1\u003C/button\u003E\r\n\r\n\u003C/body\u003E\r\n\u003C/html\u003E"}],"preview_button":true,"is_current_checkpoint":true}],"description":"To start, we'll write the HTML required to display our counter.","name":"Create the HTML","checkpoints_count":5,"completed_checkpoints_count":5,"is_current_project":true,"index":0,"completed":true,"author":{"_id":"4f03795c5864e80003000733","handle":"Adrian Redman","profile_image_url":"https://www.gravatar.com/avatar/2aa6ea79309e44b5cd9ffe8d71616fbf?s=140\u0026d=retro","self_url":"/v1/users/4f03795c5864e80003000733"},"continue_to_section":{"name":"Coding the Counter in Javascript","url":"http://www.codecademy.com/courses/a-simple-counter/1?curriculum_id="}},{"id":"4fa1da265c6b5500030217c2","checkpoints":[{"_id":"4fa1da26f9a0160003021ae1","index":0,"code_reset":true,"default_files":[{"filename":"script.js","content":""}],"entry":"For our simple counter, we'd like the buttons to be able to modify the quantity of the input field. First, we need a variable to keep track of the current quantity. Then, we'll write a Javascript function to change the current quantity.\n\n","entry_html":"\u003Cp\u003EFor our simple counter, we\u0026#39;d like the buttons to be able to modify the quantity of the input field. First, we need a variable to keep track of the current quantity. Then, we\u0026#39;ll write a Javascript function to change the current quantity.\u003C/p\u003E\n","external_resources":["https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"],"hint":null,"hint_html":null,"instruction":"1. Create a variable `qty` and set it to `0`.","instruction_html":"\u003Col\u003E\n\u003Cli\u003ECreate a variable \u003Ccode\u003Eqty\u003C/code\u003E and set it to \u003Ccode\u003E0\u003C/code\u003E.\u003C/li\u003E\n\u003C/ol\u003E\n","name":"Creating the Function","test_functions":"try {\r\n    qty;\r\n}\r\ncatch {\r\n    return \"Make sure qty exists!\";\r\n}\r\n\r\nif (qty !== 0) {\r\n    return \"Did you define the variable qty and set its value to 0?\";\r\n}\r\n\r\nreturn true;","pro_ad":{"params":{"header":"Not sure where to start?","body":"Let us set you up for success with a personalized learning path.","hint":"Get live, fast support from Codecademy Advisors when you get stuck.","utm_content":"wheretostart","image_url":"https://s3.amazonaws.com/codecademy-images/pro/variants-path.svg","utm_campaign":"ad_revamp_apr_2016","utm_source":"codecademy_platform"},"url":"/pro"},"preview_button":true,"is_current_checkpoint":false},{"_id":"4fa1ef435c6b55000302367a","index":1,"code_reset":true,"default_files":[{"filename":"script.js","content":"var qty = 0;\n\n//Add your function here.\n\n\n// This should add 12 to qty.\nmodify_qty(12);\n"}],"entry":"In this case, we want the function to add or subtract from our variable `qty`. To do so, we need to write a function to tell it how much to add or subtract from the current value of `qty`.\n","entry_html":"\u003Cp\u003EIn this case, we want the function to add or subtract from our variable \u003Ccode\u003Eqty\u003C/code\u003E. To do so, we need to write a function to tell it how much to add or subtract from the current value of \u003Ccode\u003Eqty\u003C/code\u003E.\u003C/p\u003E\n","external_resources":["https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"],"hint":"Recall that a parameter is what goes inside the parenthesis of a function definition. Like so: `function myFunction(myParameter) {//myCode}`","hint_html":"\u003Cp\u003ERecall that a parameter is what goes inside the parenthesis of a function definition. Like so: \u003Ccode\u003Efunction myFunction(myParameter) {//myCode}\u003C/code\u003E\u003C/p\u003E\n","instruction":"Create a function called `modify_qty`:\n1. Add a parameter named `val` (for value)\n2. Inside the function, set `qty` to be the quantity `qty` plus the parameter `val`\n4. Finally, return `qty`","instruction_html":"\u003Cp\u003ECreate a function called \u003Ccode\u003Emodify_qty\u003C/code\u003E:\u003Cbr\u003E\n1. Add a parameter named \u003Ccode\u003Eval\u003C/code\u003E (for value)\u003Cbr\u003E\n2. Inside the function, set \u003Ccode\u003Eqty\u003C/code\u003E to be the quantity \u003Ccode\u003Eqty\u003C/code\u003E plus the parameter \u003Ccode\u003Eval\u003C/code\u003E\u003Cbr\u003E\n4. Finally, return \u003Ccode\u003Eqty\u003C/code\u003E\u003C/p\u003E\n","name":"Adding to the quantity","test_functions":"//All my tests are broken and I can't figure it out. Everyone passes until it's fixed.\r\n\r\n//The typeof is returning undefined when there is a function set up in the code,\r\n//and the other tests are generating an error: \r\n//(Oops, try again! Make sure you have defined all the variables required from you!  \r\n//and I've got no idea where that's coming from!\r\n\r\n/*\r\nif (typeof modify_qty !== \"function\"){\r\n    return \"Have you created a function called modify_qty?\";\r\n}\r\n\r\nif (modify_qty(10) == undefined){\r\n    return \"Do you have a function called 'modify_qty and does it have a return statement inside the function?\";\r\n}\r\n\r\nif (modify_qty(5) !== qty+5) {\r\n    return \"Double check that \u003Ccode\u003Emodify_qty(5)\u003C/code\u003E is returning the right number. It's currently returning \"+ (qty+5);\r\n}\r\n*/\r\nreturn true;","pro_ad":{"params":{"header":"Not sure where to start?","body":"Let us set you up for success with a personalized learning path.","hint":"Get live, fast support from Codecademy Advisors when you get stuck.","utm_content":"wheretostart","image_url":"https://s3.amazonaws.com/codecademy-images/pro/variants-path.svg","utm_campaign":"ad_revamp_apr_2016","utm_source":"codecademy_platform"},"url":"/pro"},"preview_button":true,"is_current_checkpoint":false},{"_id":"4fa1f4adafe8d20003024860","index":2,"code_reset":true,"default_files":[{"filename":"script.js","content":"var qty = 0;\n\nfunction modify_qty(val){\n    qty = qty + val;\n    \n    console.log(qty);\n    return qty;\n}\n\nmodify_qty(12); // \u003C-- change the parameter to a negative number"}],"entry":"This seems to be working well. We just need to test it with negative numbers to make sure that it does everything we need it to.\r\n\r\n","entry_html":"\u003Cp\u003EThis seems to be working well. We just need to test it with negative numbers to make sure that it does everything we need it to.\u003C/p\u003E\n","external_resources":["https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"],"hint":null,"hint_html":null,"instruction":"Try calling the function with a negative number.  A sample function is provided for you on line 10.\n\nWhat happens?","instruction_html":"\u003Cp\u003ETry calling the function with a negative number.  A sample function is provided for you on \u003Ca href=\"javascript:void(0)\" class=\"line-no\" data-from=\"10\" data-to=\"\"\u003Eline 10\u003C/a\u003E.\u003C/p\u003E\n\n\u003Cp\u003EWhat happens?\u003C/p\u003E\n","name":"What About Negatives?","test_functions":"/* Again, not working\nif (result \u003E 0) {\n  return \"Did you pass modify_qty a negative value?\";\n}\n*/\n\nreturn true;","pro_ad":{"params":{"header":"Not sure where to start?","body":"Let us set you up for success with a personalized learning path.","hint":"Get live, fast support from Codecademy Advisors when you get stuck.","utm_content":"wheretostart","image_url":"https://s3.amazonaws.com/codecademy-images/pro/variants-path.svg","utm_campaign":"ad_revamp_apr_2016","utm_source":"codecademy_platform"},"url":"/pro"},"preview_button":true,"is_current_checkpoint":false},{"_id":"4fa1f867a938c100030248bb","index":3,"code_reset":true,"default_files":[{"filename":"script.js","content":"var qty = 0;\n\nfunction modify_qty(val) {\n    qty = qty + val;\n    \n    return qty;\n}"}],"entry":"Well, negative numbers work but if this counter is counting quantities of things, negative numbers don't make sense. You can't very well order -3 apples.\n\n","entry_html":"\u003Cp\u003EWell, negative numbers work but if this counter is counting quantities of things, negative numbers don\u0026#39;t make sense. You can\u0026#39;t very well order -3 apples.\u003C/p\u003E\n","external_resources":["https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"],"hint":"Use an `if` statement to check if `qty` is less than `0`. If it is, set it to `0`.","hint_html":"\u003Cp\u003EUse an \u003Ccode\u003Eif\u003C/code\u003E statement to check if \u003Ccode\u003Eqty\u003C/code\u003E is less than \u003Ccode\u003E0\u003C/code\u003E. If it is, set it to \u003Ccode\u003E0\u003C/code\u003E.\u003C/p\u003E\n","instruction":"1. Let's add in a check to stop the number going below zero.\r\n2. Test the modified function to make sure that quantity never falls below zero.","instruction_html":"\u003Col\u003E\n\u003Cli\u003ELet\u0026#39;s add in a check to stop the number going below zero.\u003C/li\u003E\n\u003Cli\u003ETest the modified function to make sure that quantity never falls below zero.\u003C/li\u003E\n\u003C/ol\u003E\n","name":"I Can Haz Negative?","test_functions":"/* \r\n\r\nClearing the tests to stop the angry.\r\n\r\nvar testVal = -1 * qty - 1;\r\n// if the result is not zero, or greater than one, we still have a negative number.\r\nif (testVal !== 0 \u0026\u0026 modify_qty(testVal) \u003C 0 ) {\r\n    return \"We tried \u003Ccode\u003Emodify_qty(\"+testVal+\")\u003C/code\u003E and got a negative number or a string! It should return a positive number or zero.\";\r\n}\r\n\r\n//if the result is zero, but a positive number was passed\r\nif(modify_qty(-9999999) \u003C 0){\r\n\treturn \"We tried \u003Ccode\u003Emodify_qty(-9999999)\u003C/code\u003E and got a negative number. It should be a positive number or zero.\"\r\n}\r\n\r\n//if the result is zero, but a positive number was passed\r\nif(modify_qty(9999999) === 0){\r\n\treturn \"We tried \u003Ccode\u003Emodify_qty(9999999)\u003C/code\u003E and still got zero. It should be a positive number.\"\r\n}\r\n\r\n//if the result is less than zero, but a positive number was passed\r\nif(modify_qty(9999999) \u003C 0){\r\n\treturn \"We tried \u003Ccode\u003Emodify_qty(9999999)\u003C/code\u003E and got a negative number. Your function should return a positive number.\"\r\n}\r\n*/\r\n\r\nreturn true;","pro_ad":{"params":{"header":"Not sure where to start?","body":"Let us set you up for success with a personalized learning path.","hint":"Get live, fast support from Codecademy Advisors when you get stuck.","utm_content":"wheretostart","image_url":"https://s3.amazonaws.com/codecademy-images/pro/variants-path.svg","utm_campaign":"ad_revamp_apr_2016","utm_source":"codecademy_platform"},"url":"/pro"},"preview_button":true,"is_current_checkpoint":false}],"description":"We're going to create a counter function to increment a variable up or down.","name":"Coding the Counter in Javascript","checkpoints_count":4,"completed_checkpoints_count":0,"is_current_project":false,"index":1,"completed":false,"author":{"_id":"4f03795c5864e80003000733","handle":"Adrian Redman","profile_image_url":"https://www.gravatar.com/avatar/2aa6ea79309e44b5cd9ffe8d71616fbf?s=140\u0026d=retro","self_url":"/v1/users/4f03795c5864e80003000733"},"continue_to_section":{"name":"Javascript, Meet HTML","url":"http://www.codecademy.com/courses/a-simple-counter/2?curriculum_id="}},{"id":"4fa1dad0cc6a2100030214e5","checkpoints":[{"_id":"4fa659eb32327f0003005886","index":0,"code_reset":true,"default_files":[{"filename":"index.html","content":"\u003Chtml\u003E\r\n\u003Cbody\u003E\r\n\u003Clabel for=\"qty\"\u003EQuantity\u003C/label\u003E\r\n\u003Cinput id=\"qty\" value=\"1\" /\u003E\r\n\u003Cbutton\u003E-1\u003C/button\u003E\r\n\u003Cbutton\u003E+1\u003C/button\u003E\r\n\u003Cscript type=\"text/javascript\" src=\"script.js\"\u003E\u003C/script\u003E\r\n\u003C/body\u003E\r\n\u003C/html\u003E\r\n"},{"filename":"script.js","content":"var qty = 0; \r\n\r\n// use document.getElementById() to set the value of\r\n// the input box here\r\n\r\n\r\nfunction modify_qty(val) {\r\n    var new_qty = qty + val;\r\n    \r\n    if (new_qty \u003C 0) {\r\n        new_qty = 0;\r\n    }\r\n    \r\n    return new_qty;\r\n}"}],"entry":"For our counter, we want to be able to retrieve and set the value of the input field with ID `qty`. \r\n\r\nWe can do this by using Javascript's useful function `document.getElementById()`. This will return the HTML element with the specified ID. Then, it has a property `value` of which we can read or set.\r\n\r\nLet's check out an example. Say we have an input field: `\u003Cinput id=\"example\" value=\"0\" /\u003E`. We can set its value to 5 with:\r\n\r\n`document.getElementById(\"example\").value = 5`","entry_html":"\u003Cp\u003EFor our counter, we want to be able to retrieve and set the value of the input field with ID \u003Ccode\u003Eqty\u003C/code\u003E. \u003C/p\u003E\n\n\u003Cp\u003EWe can do this by using Javascript\u0026#39;s useful function \u003Ccode\u003Edocument.getElementById()\u003C/code\u003E. This will return the HTML element with the specified ID. Then, it has a property \u003Ccode\u003Evalue\u003C/code\u003E of which we can read or set.\u003C/p\u003E\n\n\u003Cp\u003ELet\u0026#39;s check out an example. Say we have an input field: \u003Ccode\u003E\u0026lt;input id=\u0026quot;example\u0026quot; value=\u0026quot;0\u0026quot; /\u0026gt;\u003C/code\u003E. We can set its value to 5 with:\u003C/p\u003E\n\n\u003Cp\u003E\u003Ccode\u003Edocument.getElementById(\u0026quot;example\u0026quot;).value = 5\u003C/code\u003E\u003C/p\u003E\n","external_resources":["https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"],"hint":"Remember that you can set the current value by using `document.getElementById('qty').value = yourNewValue`","hint_html":"\u003Cp\u003ERemember that you can set the current value by using \u003Ccode\u003Edocument.getElementById(\u0026#39;qty\u0026#39;).value = yourNewValue\u003C/code\u003E\u003C/p\u003E\n","instruction":"The input currently has a default value of 1, but `qty` variable in the javascript is zero. Set the value of the `qty` to equal the value of the input using the technique above so that they are the same.","instruction_html":"\u003Cp\u003EThe input currently has a default value of 1, but \u003Ccode\u003Eqty\u003C/code\u003E variable in the javascript is zero. Set the value of the \u003Ccode\u003Eqty\u003C/code\u003E to equal the value of the input using the technique above so that they are the same.\u003C/p\u003E\n","name":"Getting/Setting Input Values","test_functions":"return true;","pro_ad":{"params":{"header":"Not sure where to start?","body":"Let us set you up for success with a personalized learning path.","hint":"Get live, fast support from Codecademy Advisors when you get stuck.","utm_content":"wheretostart","image_url":"https://s3.amazonaws.com/codecademy-images/pro/variants-path.svg","utm_campaign":"ad_revamp_apr_2016","utm_source":"codecademy_platform"},"url":"/pro"},"preview_button":true,"is_current_checkpoint":false},{"_id":"4fa667723014470003006152","index":1,"code_reset":true,"default_files":[{"filename":"index.html","content":"\u003Chtml\u003E\r\n\u003Chead\u003E\r\n\u003Cscript type=\"text/javascript\" src=\"script.js\"\u003E\u003C/script\u003E\r\n\u003C/head\u003E\r\n\u003Cbody\u003E\r\n\u003Clabel for=\"qty\"\u003EQuantity\u003C/label\u003E\r\n\u003Cinput id=\"qty\" value=\"0\" /\u003E\r\n\u003Cbutton\u003E-1\u003C/button\u003E\r\n\u003Cbutton\u003E+1\u003C/button\u003E\r\n\r\n\u003C/body\u003E\r\n\u003C/html\u003E"},{"filename":"script.js","content":"function modify_qty(val) {\r\n    var qty = document.getElementById('qty').value;\r\n    var new_qty = qty + val;\r\n    \r\n    if (new_qty \u003C 0) {\r\n        new_qty = 0;\r\n    }\r\n    \r\n    document.getElementById('qty').value = new_qty;\r\n    return new_qty;\r\n}"}],"entry":"We need the buttons to trigger our `modify_qty` function, but how do we do that?\r\n\r\nUsing the `onclick` event attribute we can trigger a function. In our case, we want to trigger the `modify_qty` function.","entry_html":"\u003Cp\u003EWe need the buttons to trigger our \u003Ccode\u003Emodify_qty\u003C/code\u003E function, but how do we do that?\u003C/p\u003E\n\n\u003Cp\u003EUsing the \u003Ccode\u003Eonclick\u003C/code\u003E event attribute we can trigger a function. In our case, we want to trigger the \u003Ccode\u003Emodify_qty\u003C/code\u003E function.\u003C/p\u003E\n","external_resources":["https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"],"hint":"Try adding `onclick=\"modify_qty()\"` to our buttons.","hint_html":"\u003Cp\u003ETry adding \u003Ccode\u003Eonclick=\u0026quot;modify_qty()\u0026quot;\u003C/code\u003E to our buttons.\u003C/p\u003E\n","instruction":"Add `onclick` attributes to both of the buttons, calling the `modify_qty()` function.","instruction_html":"\u003Cp\u003EAdd \u003Ccode\u003Eonclick\u003C/code\u003E attributes to both of the buttons, calling the \u003Ccode\u003Emodify_qty()\u003C/code\u003E function.\u003C/p\u003E\n","name":"Hook Up the Buttons","test_functions":"return true;","pro_ad":{"params":{"header":"Not sure where to start?","body":"Let us set you up for success with a personalized learning path.","hint":"Get live, fast support from Codecademy Advisors when you get stuck.","utm_content":"wheretostart","image_url":"https://s3.amazonaws.com/codecademy-images/pro/variants-path.svg","utm_campaign":"ad_revamp_apr_2016","utm_source":"codecademy_platform"},"url":"/pro"},"preview_button":true,"is_current_checkpoint":false},{"_id":"4fa668c804db0f00030063c0","index":2,"code_reset":true,"default_files":[{"filename":"index.html","content":"\u003Chtml\u003E\r\n\u003Chead\u003E\r\n\u003Cscript type=\"text/javascript\" src=\"script.js\"\u003E\u003C/script\u003E\r\n\u003C/head\u003E\r\n\u003Cbody\u003E\r\n\u003Clabel for=\"qty\"\u003EQuantity\u003C/label\u003E\r\n\u003Cinput id=\"qty\" value=\"0\" /\u003E\r\n\u003Cbutton onclick=\"modify_qty()\"\u003E-1\u003C/button\u003E\r\n\u003Cbutton onclick=\"modify_qty()\"\u003E+1\u003C/button\u003E\r\n\r\n\u003C/body\u003E\r\n\u003C/html\u003E"},{"filename":"script.js","content":"function modify_qty(val) {\r\n    var qty = document.getElementById('qty').value;\r\n    var new_qty = qty + val;\r\n    \r\n    if (new_qty \u003C 0) {\r\n        new_qty = 0;\r\n    }\r\n    \r\n    document.getElementById('qty').value = new_qty;\r\n    return new_qty;\r\n}"}],"entry":"The buttons will now try and trigger the function, but if you test it you'll notice that it's not working and returns `undefined`. The reason it's not working at the moment is because you have not passed an argument to the function in the `onclick` event attribute.\r\n\r\nThis is easy to fix though!","entry_html":"\u003Cp\u003EThe buttons will now try and trigger the function, but if you test it you\u0026#39;ll notice that it\u0026#39;s not working and returns \u003Ccode\u003Eundefined\u003C/code\u003E. The reason it\u0026#39;s not working at the moment is because you have not passed an argument to the function in the \u003Ccode\u003Eonclick\u003C/code\u003E event attribute.\u003C/p\u003E\n\n\u003Cp\u003EThis is easy to fix though!\u003C/p\u003E\n","external_resources":[],"hint":"For the +1 button: `onclick=\"modify_qty(1)\"` and for the -1 button `onclick=\"modify_qty(-1)\"`","hint_html":"\u003Cp\u003EFor the +1 button: \u003Ccode\u003Eonclick=\u0026quot;modify_qty(1)\u0026quot;\u003C/code\u003E and for the -1 button \u003Ccode\u003Eonclick=\u0026quot;modify_qty(-1)\u0026quot;\u003C/code\u003E\u003C/p\u003E\n","instruction":"Add arguments to each of the `onclick` attributes that match the purpose of each button.\r\n\r\n*Note:* You might notice another problem which we'll fix next.","instruction_html":"\u003Cp\u003EAdd arguments to each of the \u003Ccode\u003Eonclick\u003C/code\u003E attributes that match the purpose of each button.\u003C/p\u003E\n\n\u003Cp\u003E\u003Cem\u003ENote:\u003C/em\u003E You might notice another problem which we\u0026#39;ll fix next.\u003C/p\u003E\n","name":"Pass the Arguments","test_functions":"return true;","pro_ad":{"params":{"header":"Not sure where to start?","body":"Let us set you up for success with a personalized learning path.","hint":"Get live, fast support from Codecademy Advisors when you get stuck.","utm_content":"wheretostart","image_url":"https://s3.amazonaws.com/codecademy-images/pro/variants-path.svg","utm_campaign":"ad_revamp_apr_2016","utm_source":"codecademy_platform"},"url":"/pro"},"preview_button":true,"is_current_checkpoint":false},{"_id":"4fa66c18f2e08600030071c5","index":3,"code_reset":true,"default_files":[{"filename":"index.html","content":"\u003Chtml\u003E\r\n\u003Chead\u003E\r\n\u003Cscript type=\"text/javascript\" src=\"script.js\"\u003E\u003C/script\u003E\r\n\u003C/head\u003E\r\n\u003Cbody\u003E\r\n\u003Clabel for=\"qty\"\u003EQuantity\u003C/label\u003E\r\n\u003Cinput id=\"qty\" value=\"0\" /\u003E\r\n\u003Cbutton onclick=\"modify_qty(-1)\"\u003E-1\u003C/button\u003E\r\n\u003Cbutton onclick=\"modify_qty(1)\"\u003E+1\u003C/button\u003E\r\n\r\n\u003C/body\u003E\r\n\u003C/html\u003E"},{"filename":"script.js","content":"function modify_qty(val) {\r\n    var qty = document.getElementById('qty').value;\r\n    var new_qty = qty + val;\r\n    \r\n    if (new_qty \u003C 0) {\r\n        new_qty = 0;\r\n    }\r\n    \r\n    document.getElementById('qty').value = new_qty;\r\n    return new_qty;\r\n}"}],"entry":"You should have noticed that the result in the input box is not what you were expecting. It was returning values like \"0-1\" or \"01\".\r\n\r\nThis is caused by the code interpreting the value of the input box as a string, rather than a number. So it simply sticks the two strings together.\r\n\r\nTo fix this, we need to tell the code explicitly that the value of the input should be a number.\r\n\r\nWe do this with the **parseInt()** method which expects a *string* and a *radix* as arguments. We're only dealing with base 10 numbers, so we just put 10 as the second (radix) argument.","entry_html":"\u003Cp\u003EYou should have noticed that the result in the input box is not what you were expecting. It was returning values like \u0026quot;0-1\u0026quot; or \u0026quot;01\u0026quot;.\u003C/p\u003E\n\n\u003Cp\u003EThis is caused by the code interpreting the value of the input box as a string, rather than a number. So it simply sticks the two strings together.\u003C/p\u003E\n\n\u003Cp\u003ETo fix this, we need to tell the code explicitly that the value of the input should be a number.\u003C/p\u003E\n\n\u003Cp\u003EWe do this with the \u003Cstrong\u003EparseInt()\u003C/strong\u003E method which expects a \u003Cem\u003Estring\u003C/em\u003E and a \u003Cem\u003Eradix\u003C/em\u003E as arguments. We\u0026#39;re only dealing with base 10 numbers, so we just put 10 as the second (radix) argument.\u003C/p\u003E\n","external_resources":["https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"],"hint":"Instead of directly adding to `qty`, you'll want to add to the result of `parseInt(qty, 10)`","hint_html":"\u003Cp\u003EInstead of directly adding to \u003Ccode\u003Eqty\u003C/code\u003E, you\u0026#39;ll want to add to the result of \u003Ccode\u003EparseInt(qty, 10)\u003C/code\u003E\u003C/p\u003E\n","instruction":"Apply `parseInt()` to our variable `qty` so that the code correctly treats the value as a number.","instruction_html":"\u003Cp\u003EApply \u003Ccode\u003EparseInt()\u003C/code\u003E to our variable \u003Ccode\u003Eqty\u003C/code\u003E so that the code correctly treats the value as a number.\u003C/p\u003E\n","name":"Strings and Numbers","test_functions":"/* \r\n\r\nToo many people complaining about these tests not working so I'm just removing them.\r\n\r\nvar initval = document.getElementById('qty').value;\r\ndocument.getElementById('qty').value = 100;\r\nif (modify_qty(100) !== 200) {\r\n    //reset the value to whatever it was to avoid confusion for students\r\n    document.getElementById('qty').value = initval;\r\n    return \"Did you run \u003Ccode\u003EparseInt\u003C/code\u003E on \u003Ccode\u003Eqty\u003C/code\u003E before any addition?\";\r\n}\r\n//reset the value to whatever it was to avoid confusion for students\r\ndocument.getElementById('qty').value = initval;\r\n\r\n*/\r\n\r\nreturn true;","pro_ad":{"params":{"header":"Not sure where to start?","body":"Let us set you up for success with a personalized learning path.","hint":"Get live, fast support from Codecademy Advisors when you get stuck.","utm_content":"wheretostart","image_url":"https://s3.amazonaws.com/codecademy-images/pro/variants-path.svg","utm_campaign":"ad_revamp_apr_2016","utm_source":"codecademy_platform"},"url":"/pro"},"preview_button":true,"is_current_checkpoint":false},{"_id":"4fa671369214a00003007361","index":4,"code_reset":true,"default_files":[{"filename":"index.html","content":"\u003Chtml\u003E\r\n\u003Chead\u003E\r\n\u003Cscript type=\"text/javascript\" src=\"script.js\"\u003E\u003C/script\u003E\r\n\u003Clink rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"\u003E \r\n\u003C/head\u003E\r\n\u003Cbody\u003E\r\n\u003Cdiv class=\"box\"\u003E\r\n\u003Clabel for=\"qty\"\u003E\u003Cabbr title=\"Quantity\"\u003EQty\u003C/abbr\u003E\u003C/label\u003E\r\n\u003Cinput id=\"qty\" value=\"0\" /\u003E\r\n\u003Cbutton id=\"down\" onclick=\"modify_qty(-1)\"\u003E-1\u003C/button\u003E\r\n\u003Cbutton id=\"up\" onclick=\"modify_qty(1)\"\u003E+1\u003C/button\u003E\r\n\u003C/div\u003E\r\n\u003C/body\u003E\r\n\u003C/html\u003E"},{"filename":"style.css","content":"body {\r\n    font-family: helvetica, arial, verdana, sans-serif;\r\n\tbackground-color: #fff;\r\n\tcolor: #333;\r\n}\r\n\r\ninput {\r\n\tfont-size: 2.4em;\r\n\tbackground-color: transparent;\r\n\ttext-align: center;\r\n\tborder-width: 0;\r\n\twidth: 100%;\r\n\tmargin: 0 0 .1em 0;\r\n\tcolor: #fff;\r\n}\r\n\r\nlabel {\r\n\tdisplay: block;\r\n\tfont-size: .8em;\r\n}\r\n\r\nbutton {\r\n\t/* basics */\r\n\tcolor: #444;\r\n\tbackground-color: #B5B198;\r\n\t/* rounded corners */\r\n    -webkit-border-radius: 6px;\r\n          border-radius: 6px; \r\n    -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;\r\n\tfont-weight: bold;\r\n\r\n}\r\n\r\nbutton:hover, button:active, button:focus {\r\n\tbackground-color: #CBC7AE;\r\n}\r\n\r\n.box {\r\n\t/* basics */\r\n\tbackground-color: #444;\r\n\tcolor: #C4BE92;\r\n    text-align: center;\r\n\r\n\t/* rounded corners */\r\n    -webkit-border-radius: 12px;\r\n    border-radius: 12px; \r\n    -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;\r\n    padding: .8em .8em 1em;\r\n    width: 8em;\r\n\tmargin: 0 auto;\t\r\n  \t-webkit-box-shadow: 0px 0px 12px 0px #000;\r\n    box-shadow: 0px 0px 12px 0px #000;\r\n  \r\n}"},{"filename":"script.js","content":"function modify_qty(val) {\r\n    var qty = document.getElementById('qty').value;\r\n    var new_qty = parseInt(qty,10) + val;\r\n    \r\n    if (new_qty \u003C 0) {\r\n        new_qty = 0;\r\n    }\r\n    \r\n    document.getElementById('qty').value = new_qty;\r\n    return new_qty;\r\n}"}],"entry":"It works! The final step is to make it look nice.\n\nTo assist with this, we've wrapped the label, input and buttons in a `div` with the class of `box`. We've also abbreviated Quantity to Qty and added an appropriate `\u003Cabbr\u003E` tag for it.","entry_html":"\u003Cp\u003EIt works! The final step is to make it look nice.\u003C/p\u003E\n\n\u003Cp\u003ETo assist with this, we\u0026#39;ve wrapped the label, input and buttons in a \u003Ccode\u003Ediv\u003C/code\u003E with the class of \u003Ccode\u003Ebox\u003C/code\u003E. We\u0026#39;ve also abbreviated Quantity to Qty and added an appropriate \u003Ccode\u003E\u0026lt;abbr\u0026gt;\u003C/code\u003E tag for it.\u003C/p\u003E\n","external_resources":["https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"],"hint":null,"hint_html":null,"instruction":"Check out the CSS to see what styling we've added for you. Feel free to tweak around and make it your own!","instruction_html":"\u003Cp\u003ECheck out the CSS to see what styling we\u0026#39;ve added for you. Feel free to tweak around and make it your own!\u003C/p\u003E\n","name":"Make it pretty","test_functions":"return true;","pro_ad":{"params":{"header":"Not sure where to start?","body":"Let us set you up for success with a personalized learning path.","hint":"Get live, fast support from Codecademy Advisors when you get stuck.","utm_content":"wheretostart","image_url":"https://s3.amazonaws.com/codecademy-images/pro/variants-path.svg","utm_campaign":"ad_revamp_apr_2016","utm_source":"codecademy_platform"},"url":"/pro"},"preview_button":true,"is_current_checkpoint":false}],"description":"Combining HTML and Javascript using DOM manipulation to make a shiny counter.","name":"Javascript, Meet HTML","checkpoints_count":5,"completed_checkpoints_count":0,"is_current_project":false,"index":2,"completed":false,"author":{"_id":"4f03795c5864e80003000733","handle":"Adrian Redman","profile_image_url":"https://www.gravatar.com/avatar/2aa6ea79309e44b5cd9ffe8d71616fbf?s=140\u0026d=retro","self_url":"/v1/users/4f03795c5864e80003000733"}}],"mode":"web","language":"Web","is_php":false,"return_to":{"name":"tracks","url":"/en/learn"},"project_index":0,"course_exercises_index":5,"course_exercises_total":14,"continue_to_course":null,"author":{"_id":"4f03795c5864e80003000733","handle":"Adrian Redman","profile_image_url":"https://www.gravatar.com/avatar/2aa6ea79309e44b5cd9ffe8d71616fbf?s=140\u0026d=retro","self_url":"/v1/users/4f03795c5864e80003000733"}},"current_checkpoint_index":4,"intro":false,"cues":{"discovery-fullscreen":true,"course-navigator":true}};
+
+CCDATA.secureSandboxIndexPath = 'https://cdn-production.codecademy.com/assets/secure/index-e15cd898fa5906b22c02b7fc4cf8e509.html';
+
+
+
+</script>
+
+
+<title>A Simple Counter | Codecademy</title>
+
+<meta content="IE=edge,chrome=1" http="{:equiv=&gt;&quot;X-UA-Compatible&quot;}">
+<meta content="Codecademy is the easiest way to learn how to code. It&#39;s interactive, fun, and you can do it with your friends." name="description">
+<link href="https://www.codecademy.com/favicon.ico" rel="shortcut icon">
+<link href="https://www.codecademy.com/blog.rss" rel="alternate" title="Codecademy Blog" type="application/rss+xml">
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+
+
+
+<meta property="fb:app_id" content="212500508799908">
+<meta property="og:url" content="https://www.codecademy.com/courses/a-simple-counter/0/5">
+<meta property="og:site_name" content="Codecademy">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="A Simple Counter">
+  <meta property="og:description" content="In this course we will combine HTML, CSS, and Javascript to create a simple counter widget.
+Note that this course is no longer supported. For an updated version of this track, please visit codecademy.com/learn.">
+
+
+
+<meta content="authenticity_token" name="csrf-param">
+<meta content="LAocGYBYe4mquOT5v07Yp8J5Kh2Y0qdLlErQ/Uf8zYg=" name="csrf-token">
+
+
+
+
+  <link href="./A Simple Counter _ Codecademy_files/application-ltr-5b7da64d64ea4a18240d774774a9fb4e.css" media="screen" rel="stylesheet" type="text/css">
+
+<link href="./A Simple Counter _ Codecademy_files/css" media="screen" rel="stylesheet" type="text/css">
+<link href="./A Simple Counter _ Codecademy_files/patch-e4a4443f7bfe3adfc321523b8199602e.css" media="screen" rel="stylesheet" type="text/css">
+
+<!--[if gte IE 9]>
+<style type="text/css">
+  .gradient {filter: none;}
+</style>
+<![endif]-->
+
+      <link href="./A Simple Counter _ Codecademy_files/vendor.bundle-07e5a6fa9da04a7031ad7006feb484b1.css" media="screen" rel="stylesheet" type="text/css">
+      <link href="./A Simple Counter _ Codecademy_files/composer.bundle-88b8a39cf8d860a8c50bae1b39e9ccca.css" media="screen" rel="stylesheet" type="text/css">
+
+<script src="./A Simple Counter _ Codecademy_files/widgets-en-df80c34c3f1dbc463ee489e907a4c0d2.js" type="text/javascript"></script>
+  <script src="./A Simple Counter _ Codecademy_files/head.bundle-4b16f23cc0b691f28578df5e89238214.js" type="text/javascript"></script>
+
+<style id="ace_editor">.ace_editor {position: relative;overflow: hidden;font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;font-size: 12px;line-height: normal;color: black;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;}.ace_content {position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;cursor: text;}.ace_dragging, .ace_dragging * {cursor: move !important;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUM2OEZDQTQ4RTU0MTFFMUEzM0VFRTM2RUY1M0RBMjYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUM2OEZDQTU4RTU0MTFFMUEzM0VFRTM2RUY1M0RBMjYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBQzY4RkNBMjhFNTQxMUUxQTMzRUVFMzZFRjUzREEyNiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBQzY4RkNBMzhFNTQxMUUxQTMzRUVFMzZFRjUzREEyNiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkgXxbAAAAJbSURBVHjapFNNaBNBFH4zs5vdZLP5sQmNpT82QY209heh1ioWisaDRcSKF0WKJ0GQnrzrxasHsR6EnlrwD0TagxJabaVEpFYxLWlLSS822tr87m66ccfd2GKyVhA6MMybgfe97/vmPUQphd0sZjto9XIn9OOsvlu2nkqRzVU+6vvlzPf8W6bk8dxQ0NPbxAALgCgg2JkaQuhzQau/El0zbmUA7U0Es8v2CiYmKQJHGO1QICCLoqilMhkmurDAyapKgqItezi/USRdJqEYY4D5jCy03ht2yMkkvL91jTTX10qzyyu2hruPRN7jgbH+EOsXcMLgYiThEgAMhABW85oqy1DXdRIdvP1AHJ2acQXvDIrVHcdQNrEKNYSVMSZGMjEzIIAwDXIo+6G/FxcGnzkC3T2oMhLjre49sBB+RRcHLqdafK6sYdE/GGBwU1VpFNj0aN8pJbe+BkZyevUrvLl6Xmm0W9IuTc0DxrDNAJd5oEvI/KRsNC3bQyNjPO9yQ1YHcfj2QvfQc/5TUhJTBc2iM0U7AWDQtc1nJHvD/cfO2s7jaGkiTEfa/Ep8coLu7zmNmh8+dc5lZDuUeFAGUNA/OY6JVaypQ0vjr7XYjUvJM37vt+j1vuTK5DgVfVUoTjVe+y3/LxMxY2GgU+CSLy4cpfsYorRXuXIOi0Vt40h67uZFTdIo6nLaZcwUJWAzwNS0tBnqqKzQDnjdG/iPyZxo46HaKUpbvYkj8qYRTZsBhge+JHhZyh0x9b95JqjVJkT084kZIPwu/mPWqPgfQ5jXh2+92Ay7HedfAgwA6KDWafb4w3cAAAAASUVORK5CYII=");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUM2OEZDQTg4RTU0MTFFMUEzM0VFRTM2RUY1M0RBMjYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUM2OEZDQTk4RTU0MTFFMUEzM0VFRTM2RUY1M0RBMjYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBQzY4RkNBNjhFNTQxMUUxQTMzRUVFMzZFRjUzREEyNiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBQzY4RkNBNzhFNTQxMUUxQTMzRUVFMzZFRjUzREEyNiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pgd7PfIAAAGmSURBVHjaYvr//z8DJZiJgUIANoCRkREb9gLiSVAaQx4OQM7AAkwd7XU2/v++/rOttdYGEB9dASEvOMydGKfH8Gv/p4XTkvRBfLxeQAP+1cUhXopyvzhP7P/IoSj7g7Mw09cNKO6J1QQ0L4gICPIv/veg/8W+JdFvQNLHVsW9/nmn9zk7B+cCkDwhL7gt6knSZnx9/LuCEOcvkIAMP+cvto9nfqyZmmUAksfnBUtbM60gX/3/kgyv3/xSFOL5DZT+L8vP+Yfh5cvfPvp/xUHyQHXGyAYwgpwBjZYFT3Y1OEl/OfCH4ffv3wzc4iwMvNIsDJ+f/mH4+vIPAxsb631WW0Yln6ZpQLXdMK/DXGDflh+sIv37EivD5x//Gb7+YWT4y86sl7BCCkSD+Z++/1dkvsFRl+HnD1Rvje4F8whjMXmGj58YGf5zsDMwcnAwfPvKcml62DsQDeaDxN+/Y0qwlpEHqrdB94IRNIDUgfgfKJChGK4OikEW3gTiXUB950ASLFAF54AC94A0G9QAfOnmF9DCDzABFqS08IHYDIScdijOjQABBgC+/9awBH96jwAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/gif;base64,R0lGODlhEAAQAMQAAAAAAEFBQVJSUl5eXmRkZGtra39/f4WFhYmJiZGRkaampry8vMPDw8zMzNXV1dzc3OTk5Orq6vDw8P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABQALAAAAAAQABAAAAUuICWOZGmeaBml5XGwFCQSBGyXRSAwtqQIiRuiwIM5BoYVbEFIyGCQoeJGrVptIQA7");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGRTk5MTVGREIxNDkxMUUxOTc5Q0FFREQyMTNGMjBFQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGRTk5MTVGRUIxNDkxMUUxOTc5Q0FFREQyMTNGMjBFQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZFOTkxNUZCQjE0OTExRTE5NzlDQUVERDIxM0YyMEVDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkZFOTkxNUZDQjE0OTExRTE5NzlDQUVERDIxM0YyMEVDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+SIDkjAAAAJ1JREFUeNpi/P//PwMlgImBQkB7A6qrq/+DMC55FkIGKCoq4pVnpFkgTp069f/+/fv/r1u37r+tre1/kg0A+ptn9uzZYLaRkRHpLvjw4cNXWVlZhufPnzOcO3eOdAO0tbVPAjHDmzdvGA4fPsxIsgGSkpJmv379Ynj37h2DjIyMCMkG3LhxQ/T27dsMampqDHZ2dq/pH41DxwCAAAMAFdc68dUsFZgAAAAASUVORK5CYII=");}.ace_scrollbar {position: absolute;overflow-x: hidden;overflow-y: auto;right: 0;top: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-h {position: absolute;overflow-x: auto;overflow-y: hidden;right: 0;left: 0;bottom: 0;z-index: 6;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;}.ace_text-input.ace_composition {background: #f8f8f8;color: #111;z-index: 1000;opacity: 1;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;white-space: nowrap;height: 100%;width: 100%;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;/* setting pointer-events: auto; on node under the mouse, which changesduring scroll, will break mouse wheel scrolling in Safari */pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;}.ace_text-layer {font: inherit !important;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_smooth-blinking .ace_cursor {-moz-transition: opacity 0.18s;-webkit-transition: opacity 0.18s;-o-transition: opacity 0.18s;-ms-transition: opacity 0.18s;transition: opacity 0.18s;}.ace_cursor[style*="opacity: 0"]{-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";}.ace_editor.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_line {white-space: nowrap;}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}.ace_line .ace_fold {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%11%00%00%00%09%08%06%00%00%00%D4%E8%C7%0C%00%00%03%1EiCCPICC%20Profile%00%00x%01%85T%DFk%D3P%14%FE%DAe%9D%B0%E1%8B%3Ag%11%09%3Eh%91ndStC%9C%B6kW%BA%CDZ%EA6%B7!H%9B%A6m%5C%9A%C6%24%ED~%B0%07%D9%8Bo%3A%C5w%F1%07%3E%F9%07%0C%D9%83o%7B%92%0D%C6%14a%F8%AC%88%22L%F6%22%B3%9E%9B4M'S%03%B9%F7%BB%DF%F9%EE9'%E7%E4%5E%A0%F9qZ%D3%14%2F%0F%14USO%C5%C2%FC%C4%E4%14%DF%F2%01%5E%1CC%2B%FChM%8B%86%16J%26G%40%0F%D3%B2y%EF%B3%F3%0E%1E%C6lt%EEo%DF%AB%FEc%D5%9A%95%0C%11%F0%1C%20%BE%945%C4%22%E1Y%A0i%5C%D4t%13%E0%D6%89%EF%9D15%C2%CDLsX%A7%04%09%1Fg8oc%81%E1%8C%8D%23%96f45%40%9A%09%C2%07%C5B%3AK%B8%408%98i%E0%F3%0D%D8%CE%81%14%E4'%26%A9%92.%8B%3C%ABER%2F%E5dE%B2%0C%F6%F0%1Fs%83%F2_%B0%A8%94%E9%9B%AD%E7%10%8Dm%9A%19N%D1%7C%8A%DE%1F9%7Dp%8C%E6%00%D5%C1%3F_%18%BDA%B8%9DpX6%E3%A35~B%CD%24%AE%11%26%BD%E7%EEti%98%EDe%9A%97Y)%12%25%1C%24%BCbT%AE3li%E6%0B%03%89%9A%E6%D3%ED%F4P%92%B0%9F4%BF43Y%F3%E3%EDP%95%04%EB1%C5%F5%F6KF%F4%BA%BD%D7%DB%91%93%07%E35%3E%A7)%D6%7F%40%FE%BD%F7%F5r%8A%E5y%92%F0%EB%B4%1E%8D%D5%F4%5B%92%3AV%DB%DB%E4%CD%A6%23%C3%C4wQ%3F%03HB%82%8E%1Cd(%E0%91B%0Ca%9Ac%C4%AA%F8L%16%19%22J%A4%D2itTy%B28%D6%3B(%93%96%ED%1CGx%C9_%0E%B8%5E%16%F5%5B%B2%B8%F6%E0%FB%9E%DD%25%D7%8E%BC%15%85%C5%B7%A3%D8Q%ED%B5%81%E9%BA%B2%13%9A%1B%7Fua%A5%A3n%E17%B9%E5%9B%1Bm%AB%0B%08Q%FE%8A%E5%B1H%5Ee%CAO%82Q%D7u6%E6%90S%97%FCu%0B%CF2%94%EE%25v%12X%0C%BA%AC%F0%5E%F8*l%0AO%85%17%C2%97%BF%D4%C8%CE%DE%AD%11%CB%80q%2C%3E%AB%9ES%CD%C6%EC%25%D2L%D2%EBd%B8%BF%8A%F5B%C6%18%F9%901CZ%9D%BE%24M%9C%8A9%F2%DAP%0B'%06w%82%EB%E6%E2%5C%2F%D7%07%9E%BB%CC%5D%E1%FA%B9%08%AD.r%23%8E%C2%17%F5E%7C!%F0%BE3%BE%3E_%B7o%88a%A7%DB%BE%D3d%EB%A31Z%EB%BB%D3%91%BA%A2%B1z%94%8F%DB'%F6%3D%8E%AA%13%19%B2%B1%BE%B1~V%08%2B%B4%A2cjJ%B3tO%00%03%25mN%97%F3%05%93%EF%11%84%0B%7C%88%AE-%89%8F%ABbW%90O%2B%0Ao%99%0C%5E%97%0CI%AFH%D9.%B0%3B%8F%ED%03%B6S%D6%5D%E6i_s9%F3*p%E9%1B%FD%C3%EB.7U%06%5E%19%C0%D1s.%17%A03u%E4%09%B0%7C%5E%2C%EB%15%DB%1F%3C%9E%B7%80%91%3B%DBc%AD%3Dma%BA%8B%3EV%AB%DBt.%5B%1E%01%BB%0F%AB%D5%9F%CF%AA%D5%DD%E7%E4%7F%0Bx%A3%FC%06%A9%23%0A%D6%C2%A1_2%00%00%00%09pHYs%00%00%0B%13%00%00%0B%13%01%00%9A%9C%18%00%00%00%B5IDAT(%15%A5%91%3D%0E%02!%10%85ac%E1%05%D6%CE%D6%C6%CE%D2%E8%ED%CD%DE%C0%C6%D6N.%E0V%F8%3D%9Ca%891XH%C2%BE%D9y%3F%90!%E6%9C%C3%BFk%E5%011%C6-%F5%C8N%04%DF%BD%FF%89%DFt%83DN%60%3E%F3%AB%A0%DE%1A%5Dg%BE%10Q%97%1B%40%9C%A8o%10%8F%5E%828%B4%1B%60%87%F6%02%26%85%1Ch%1E%C1%2B%5Bk%FF%86%EE%B7j%09%9A%DA%9B%ACe%A3%F9%EC%DA!9%B4%D5%A6%81%86%86%98%CC%3C%5B%40%FA%81%B3%E9%CB%23%94%C16Azo%05%D4%E1%C1%95a%3B%8A'%A0%E8%CC%17%22%85%1D%BA%00%A2%FA%DC%0A%94%D1%D1%8D%8B%3A%84%17B%C7%60%1A%25Z%FC%8D%00%00%00%00IEND%AEB%60%82"),url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%05%00%00%007%08%06%00%00%00%C4%DD%80C%00%00%03%1EiCCPICC%20Profile%00%00x%01%85T%DFk%D3P%14%FE%DAe%9D%B0%E1%8B%3Ag%11%09%3Eh%91ndStC%9C%B6kW%BA%CDZ%EA6%B7!H%9B%A6m%5C%9A%C6%24%ED~%B0%07%D9%8Bo%3A%C5w%F1%07%3E%F9%07%0C%D9%83o%7B%92%0D%C6%14a%F8%AC%88%22L%F6%22%B3%9E%9B4M'S%03%B9%F7%BB%DF%F9%EE9'%E7%E4%5E%A0%F9qZ%D3%14%2F%0F%14USO%C5%C2%FC%C4%E4%14%DF%F2%01%5E%1CC%2B%FChM%8B%86%16J%26G%40%0F%D3%B2y%EF%B3%F3%0E%1E%C6lt%EEo%DF%AB%FEc%D5%9A%95%0C%11%F0%1C%20%BE%945%C4%22%E1Y%A0i%5C%D4t%13%E0%D6%89%EF%9D15%C2%CDLsX%A7%04%09%1Fg8oc%81%E1%8C%8D%23%96f45%40%9A%09%C2%07%C5B%3AK%B8%408%98i%E0%F3%0D%D8%CE%81%14%E4'%26%A9%92.%8B%3C%ABER%2F%E5dE%B2%0C%F6%F0%1Fs%83%F2_%B0%A8%94%E9%9B%AD%E7%10%8Dm%9A%19N%D1%7C%8A%DE%1F9%7Dp%8C%E6%00%D5%C1%3F_%18%BDA%B8%9DpX6%E3%A35~B%CD%24%AE%11%26%BD%E7%EEti%98%EDe%9A%97Y)%12%25%1C%24%BCbT%AE3li%E6%0B%03%89%9A%E6%D3%ED%F4P%92%B0%9F4%BF43Y%F3%E3%EDP%95%04%EB1%C5%F5%F6KF%F4%BA%BD%D7%DB%91%93%07%E35%3E%A7)%D6%7F%40%FE%BD%F7%F5r%8A%E5y%92%F0%EB%B4%1E%8D%D5%F4%5B%92%3AV%DB%DB%E4%CD%A6%23%C3%C4wQ%3F%03HB%82%8E%1Cd(%E0%91B%0Ca%9Ac%C4%AA%F8L%16%19%22J%A4%D2itTy%B28%D6%3B(%93%96%ED%1CGx%C9_%0E%B8%5E%16%F5%5B%B2%B8%F6%E0%FB%9E%DD%25%D7%8E%BC%15%85%C5%B7%A3%D8Q%ED%B5%81%E9%BA%B2%13%9A%1B%7Fua%A5%A3n%E17%B9%E5%9B%1Bm%AB%0B%08Q%FE%8A%E5%B1H%5Ee%CAO%82Q%D7u6%E6%90S%97%FCu%0B%CF2%94%EE%25v%12X%0C%BA%AC%F0%5E%F8*l%0AO%85%17%C2%97%BF%D4%C8%CE%DE%AD%11%CB%80q%2C%3E%AB%9ES%CD%C6%EC%25%D2L%D2%EBd%B8%BF%8A%F5B%C6%18%F9%901CZ%9D%BE%24M%9C%8A9%F2%DAP%0B'%06w%82%EB%E6%E2%5C%2F%D7%07%9E%BB%CC%5D%E1%FA%B9%08%AD.r%23%8E%C2%17%F5E%7C!%F0%BE3%BE%3E_%B7o%88a%A7%DB%BE%D3d%EB%A31Z%EB%BB%D3%91%BA%A2%B1z%94%8F%DB'%F6%3D%8E%AA%13%19%B2%B1%BE%B1~V%08%2B%B4%A2cjJ%B3tO%00%03%25mN%97%F3%05%93%EF%11%84%0B%7C%88%AE-%89%8F%ABbW%90O%2B%0Ao%99%0C%5E%97%0CI%AFH%D9.%B0%3B%8F%ED%03%B6S%D6%5D%E6i_s9%F3*p%E9%1B%FD%C3%EB.7U%06%5E%19%C0%D1s.%17%A03u%E4%09%B0%7C%5E%2C%EB%15%DB%1F%3C%9E%B7%80%91%3B%DBc%AD%3Dma%BA%8B%3EV%AB%DBt.%5B%1E%01%BB%0F%AB%D5%9F%CF%AA%D5%DD%E7%E4%7F%0Bx%A3%FC%06%A9%23%0A%D6%C2%A1_2%00%00%00%09pHYs%00%00%0B%13%00%00%0B%13%01%00%9A%9C%18%00%00%00%3AIDAT8%11c%FC%FF%FF%7F%18%03%1A%60%01%F2%3F%A0%891%80%04%FF%11-%F8%17%9BJ%E2%05%B1ZD%81v%26t%E7%80%F8%A3%82h%A12%1A%20%A3%01%02%0F%01%BA%25%06%00%19%C0%0D%AEF%D5%3ES%00%00%00%00IEND%AEB%60%82");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;-moz-border-radius: 2px;-webkit-border-radius: 2px;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%11%00%00%00%09%08%06%00%00%00%D4%E8%C7%0C%00%00%03%1EiCCPICC%20Profile%00%00x%01%85T%DFk%D3P%14%FE%DAe%9D%B0%E1%8B%3Ag%11%09%3Eh%91ndStC%9C%B6kW%BA%CDZ%EA6%B7!H%9B%A6m%5C%9A%C6%24%ED~%B0%07%D9%8Bo%3A%C5w%F1%07%3E%F9%07%0C%D9%83o%7B%92%0D%C6%14a%F8%AC%88%22L%F6%22%B3%9E%9B4M'S%03%B9%F7%BB%DF%F9%EE9'%E7%E4%5E%A0%F9qZ%D3%14%2F%0F%14USO%C5%C2%FC%C4%E4%14%DF%F2%01%5E%1CC%2B%FChM%8B%86%16J%26G%40%0F%D3%B2y%EF%B3%F3%0E%1E%C6lt%EEo%DF%AB%FEc%D5%9A%95%0C%11%F0%1C%20%BE%945%C4%22%E1Y%A0i%5C%D4t%13%E0%D6%89%EF%9D15%C2%CDLsX%A7%04%09%1Fg8oc%81%E1%8C%8D%23%96f45%40%9A%09%C2%07%C5B%3AK%B8%408%98i%E0%F3%0D%D8%CE%81%14%E4'%26%A9%92.%8B%3C%ABER%2F%E5dE%B2%0C%F6%F0%1Fs%83%F2_%B0%A8%94%E9%9B%AD%E7%10%8Dm%9A%19N%D1%7C%8A%DE%1F9%7Dp%8C%E6%00%D5%C1%3F_%18%BDA%B8%9DpX6%E3%A35~B%CD%24%AE%11%26%BD%E7%EEti%98%EDe%9A%97Y)%12%25%1C%24%BCbT%AE3li%E6%0B%03%89%9A%E6%D3%ED%F4P%92%B0%9F4%BF43Y%F3%E3%EDP%95%04%EB1%C5%F5%F6KF%F4%BA%BD%D7%DB%91%93%07%E35%3E%A7)%D6%7F%40%FE%BD%F7%F5r%8A%E5y%92%F0%EB%B4%1E%8D%D5%F4%5B%92%3AV%DB%DB%E4%CD%A6%23%C3%C4wQ%3F%03HB%82%8E%1Cd(%E0%91B%0Ca%9Ac%C4%AA%F8L%16%19%22J%A4%D2itTy%B28%D6%3B(%93%96%ED%1CGx%C9_%0E%B8%5E%16%F5%5B%B2%B8%F6%E0%FB%9E%DD%25%D7%8E%BC%15%85%C5%B7%A3%D8Q%ED%B5%81%E9%BA%B2%13%9A%1B%7Fua%A5%A3n%E17%B9%E5%9B%1Bm%AB%0B%08Q%FE%8A%E5%B1H%5Ee%CAO%82Q%D7u6%E6%90S%97%FCu%0B%CF2%94%EE%25v%12X%0C%BA%AC%F0%5E%F8*l%0AO%85%17%C2%97%BF%D4%C8%CE%DE%AD%11%CB%80q%2C%3E%AB%9ES%CD%C6%EC%25%D2L%D2%EBd%B8%BF%8A%F5B%C6%18%F9%901CZ%9D%BE%24M%9C%8A9%F2%DAP%0B'%06w%82%EB%E6%E2%5C%2F%D7%07%9E%BB%CC%5D%E1%FA%B9%08%AD.r%23%8E%C2%17%F5E%7C!%F0%BE3%BE%3E_%B7o%88a%A7%DB%BE%D3d%EB%A31Z%EB%BB%D3%91%BA%A2%B1z%94%8F%DB'%F6%3D%8E%AA%13%19%B2%B1%BE%B1~V%08%2B%B4%A2cjJ%B3tO%00%03%25mN%97%F3%05%93%EF%11%84%0B%7C%88%AE-%89%8F%ABbW%90O%2B%0Ao%99%0C%5E%97%0CI%AFH%D9.%B0%3B%8F%ED%03%B6S%D6%5D%E6i_s9%F3*p%E9%1B%FD%C3%EB.7U%06%5E%19%C0%D1s.%17%A03u%E4%09%B0%7C%5E%2C%EB%15%DB%1F%3C%9E%B7%80%91%3B%DBc%AD%3Dma%BA%8B%3EV%AB%DBt.%5B%1E%01%BB%0F%AB%D5%9F%CF%AA%D5%DD%E7%E4%7F%0Bx%A3%FC%06%A9%23%0A%D6%C2%A1_2%00%00%00%09pHYs%00%00%0B%13%00%00%0B%13%01%00%9A%9C%18%00%00%00%B5IDAT(%15%A5%91%3D%0E%02!%10%85ac%E1%05%D6%CE%D6%C6%CE%D2%E8%ED%CD%DE%C0%C6%D6N.%E0V%F8%3D%9Ca%891XH%C2%BE%D9y%3F%90!%E6%9C%C3%BFk%E5%011%C6-%F5%C8N%04%DF%BD%FF%89%DFt%83DN%60%3E%F3%AB%A0%DE%1A%5Dg%BE%10Q%97%1B%40%9C%A8o%10%8F%5E%828%B4%1B%60%87%F6%02%26%85%1Ch%1E%C1%2B%5Bk%FF%86%EE%B7j%09%9A%DA%9B%ACe%A3%F9%EC%DA!9%B4%D5%A6%81%86%86%98%CC%3C%5B%40%FA%81%B3%E9%CB%23%94%C16Azo%05%D4%E1%C1%95a%3B%8A'%A0%E8%CC%17%22%85%1D%BA%00%A2%FA%DC%0A%94%D1%D1%8D%8B%3A%84%17B%C7%60%1A%25Z%FC%8D%00%00%00%00IEND%AEB%60%82"),url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%05%00%00%007%08%06%00%00%00%C4%DD%80C%00%00%03%1EiCCPICC%20Profile%00%00x%01%85T%DFk%D3P%14%FE%DAe%9D%B0%E1%8B%3Ag%11%09%3Eh%91ndStC%9C%B6kW%BA%CDZ%EA6%B7!H%9B%A6m%5C%9A%C6%24%ED~%B0%07%D9%8Bo%3A%C5w%F1%07%3E%F9%07%0C%D9%83o%7B%92%0D%C6%14a%F8%AC%88%22L%F6%22%B3%9E%9B4M'S%03%B9%F7%BB%DF%F9%EE9'%E7%E4%5E%A0%F9qZ%D3%14%2F%0F%14USO%C5%C2%FC%C4%E4%14%DF%F2%01%5E%1CC%2B%FChM%8B%86%16J%26G%40%0F%D3%B2y%EF%B3%F3%0E%1E%C6lt%EEo%DF%AB%FEc%D5%9A%95%0C%11%F0%1C%20%BE%945%C4%22%E1Y%A0i%5C%D4t%13%E0%D6%89%EF%9D15%C2%CDLsX%A7%04%09%1Fg8oc%81%E1%8C%8D%23%96f45%40%9A%09%C2%07%C5B%3AK%B8%408%98i%E0%F3%0D%D8%CE%81%14%E4'%26%A9%92.%8B%3C%ABER%2F%E5dE%B2%0C%F6%F0%1Fs%83%F2_%B0%A8%94%E9%9B%AD%E7%10%8Dm%9A%19N%D1%7C%8A%DE%1F9%7Dp%8C%E6%00%D5%C1%3F_%18%BDA%B8%9DpX6%E3%A35~B%CD%24%AE%11%26%BD%E7%EEti%98%EDe%9A%97Y)%12%25%1C%24%BCbT%AE3li%E6%0B%03%89%9A%E6%D3%ED%F4P%92%B0%9F4%BF43Y%F3%E3%EDP%95%04%EB1%C5%F5%F6KF%F4%BA%BD%D7%DB%91%93%07%E35%3E%A7)%D6%7F%40%FE%BD%F7%F5r%8A%E5y%92%F0%EB%B4%1E%8D%D5%F4%5B%92%3AV%DB%DB%E4%CD%A6%23%C3%C4wQ%3F%03HB%82%8E%1Cd(%E0%91B%0Ca%9Ac%C4%AA%F8L%16%19%22J%A4%D2itTy%B28%D6%3B(%93%96%ED%1CGx%C9_%0E%B8%5E%16%F5%5B%B2%B8%F6%E0%FB%9E%DD%25%D7%8E%BC%15%85%C5%B7%A3%D8Q%ED%B5%81%E9%BA%B2%13%9A%1B%7Fua%A5%A3n%E17%B9%E5%9B%1Bm%AB%0B%08Q%FE%8A%E5%B1H%5Ee%CAO%82Q%D7u6%E6%90S%97%FCu%0B%CF2%94%EE%25v%12X%0C%BA%AC%F0%5E%F8*l%0AO%85%17%C2%97%BF%D4%C8%CE%DE%AD%11%CB%80q%2C%3E%AB%9ES%CD%C6%EC%25%D2L%D2%EBd%B8%BF%8A%F5B%C6%18%F9%901CZ%9D%BE%24M%9C%8A9%F2%DAP%0B'%06w%82%EB%E6%E2%5C%2F%D7%07%9E%BB%CC%5D%E1%FA%B9%08%AD.r%23%8E%C2%17%F5E%7C!%F0%BE3%BE%3E_%B7o%88a%A7%DB%BE%D3d%EB%A31Z%EB%BB%D3%91%BA%A2%B1z%94%8F%DB'%F6%3D%8E%AA%13%19%B2%B1%BE%B1~V%08%2B%B4%A2cjJ%B3tO%00%03%25mN%97%F3%05%93%EF%11%84%0B%7C%88%AE-%89%8F%ABbW%90O%2B%0Ao%99%0C%5E%97%0CI%AFH%D9.%B0%3B%8F%ED%03%B6S%D6%5D%E6i_s9%F3*p%E9%1B%FD%C3%EB.7U%06%5E%19%C0%D1s.%17%A03u%E4%09%B0%7C%5E%2C%EB%15%DB%1F%3C%9E%B7%80%91%3B%DBc%AD%3Dma%BA%8B%3EV%AB%DBt.%5B%1E%01%BB%0F%AB%D5%9F%CF%AA%D5%DD%E7%E4%7F%0Bx%A3%FC%06%A9%23%0A%D6%C2%A1_2%00%00%00%09pHYs%00%00%0B%13%00%00%0B%13%01%00%9A%9C%18%00%00%003IDAT8%11c%FC%FF%FF%7F%3E%03%1A%60%01%F2%3F%A3%891%80%04%FFQ%26%F8w%C0%B43%A1%DB%0C%E2%8F%0A%A2%85%CAh%80%8C%06%08%3C%04%E8%96%18%00%A3S%0D%CD%CF%D8%C1%9D%00%00%00%00IEND%AEB%60%82");background-repeat: no-repeat, repeat-x;background-position: center center, top left;}.ace_gutter-tooltip {background-color: #FFF;background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.1));background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;display: inline-block;max-width: 500px;padding: 4px;position: fixed;z-index: 999999;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;cursor: default;white-space: pre-line;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%05%00%00%00%05%08%06%00%00%00%8Do%26%E5%00%00%004IDATx%DAe%8A%B1%0D%000%0C%C2%F2%2CK%96%BC%D0%8F9%81%88H%E9%D0%0E%96%C0%10%92%3E%02%80%5E%82%E4%A9*-%EEsw%C8%CC%11%EE%96w%D8%DC%E9*Eh%0C%151(%00%00%00%00IEND%AEB%60%82");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%05%00%00%00%05%08%06%00%00%00%8Do%26%E5%00%00%004IDATx%DAm%C7%C1%09%000%08C%D1%8C%ECE%C8E(%8E%EC%02)%1EZJ%F1%C1'%04%07I%E1%E5%EE%CAL%F5%A2%99%99%22%E2%D6%1FU%B5%FE0%D9x%A7%26Wz5%0E%D5%00%00%00%00IEND%AEB%60%82");}.ace_fold-widget.ace_closed {background-image: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%03%00%00%00%06%08%06%00%00%00%06%E5%24%0C%00%00%009IDATx%DA5%CA%C1%09%000%08%03%C0%AC*(%3E%04%C1%0D%BA%B1%23%A4Uh%E0%20%81%C0%CC%F8%82%81%AA%A2%AArGfr%88%08%11%11%1C%DD%7D%E0%EE%5B%F6%F6%CB%B8%05Q%2F%E9tai%D9%00%00%00%00IEND%AEB%60%82");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);-moz-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);-webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);-moz-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);-webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}/*** Dark version for fold widgets*/.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {-moz-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);-webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {-moz-transition: opacity 0.4s ease 0.05s;-webkit-transition: opacity 0.4s ease 0.05s;-o-transition: opacity 0.4s ease 0.05s;-ms-transition: opacity 0.4s ease 0.05s;transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {-moz-transition: opacity 0.05s ease 0.05s;-webkit-transition: opacity 0.05s ease 0.05s;-o-transition: opacity 0.05s ease 0.05s;-ms-transition: opacity 0.05s ease 0.05s;transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;}.ace-tm .ace_cursor {border-left: 2px solid black;}.ace-tm .ace_overwrite-cursors .ace_cursor {border-left: 0px;border-bottom: 1px solid black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;border-radius: 2px;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}</style><style id="ace-tomorrow-night">.ace-tomorrow-night .ace_gutter {background: #25282c;color: #C5C8C6}.ace-tomorrow-night .ace_print-margin {width: 1px;background: #25282c}.ace-tomorrow-night .ace_scroller {background-color: #1D1F21}.ace-tomorrow-night .ace_text-layer {color: #C5C8C6}.ace-tomorrow-night .ace_cursor {border-left: 2px solid #AEAFAD}.ace-tomorrow-night .ace_overwrite-cursors .ace_cursor {border-left: 0px;border-bottom: 1px solid #AEAFAD}.ace-tomorrow-night .ace_marker-layer .ace_selection {background: #373B41}.ace-tomorrow-night.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #1D1F21;border-radius: 2px}.ace-tomorrow-night .ace_marker-layer .ace_step {background: rgb(102, 82, 0)}.ace-tomorrow-night .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #4B4E55}.ace-tomorrow-night .ace_marker-layer .ace_active-line {background: #495660}.ace-tomorrow-night .ace_gutter-active-line {background-color: #495660}.ace-tomorrow-night .ace_marker-layer .ace_selected-word {border: 1px solid #373B41}.ace-tomorrow-night .ace_invisible {color: #4B4E55}.ace-tomorrow-night .ace_keyword,.ace-tomorrow-night .ace_meta,.ace-tomorrow-night .ace_storage,.ace-tomorrow-night .ace_storage.ace_type,.ace-tomorrow-night .ace_support.ace_type {color: #B294BB}.ace-tomorrow-night .ace_keyword.ace_operator {color: #8ABEB7}.ace-tomorrow-night .ace_constant.ace_character,.ace-tomorrow-night .ace_constant.ace_language,.ace-tomorrow-night .ace_constant.ace_numeric,.ace-tomorrow-night .ace_keyword.ace_other.ace_unit,.ace-tomorrow-night .ace_support.ace_constant,.ace-tomorrow-night .ace_variable.ace_parameter {color: #DE935F}.ace-tomorrow-night .ace_constant.ace_other {color: #CED1CF}.ace-tomorrow-night .ace_invalid {color: #CED2CF;background-color: #DF5F5F}.ace-tomorrow-night .ace_invalid.ace_deprecated {color: #CED2CF;background-color: #B798BF}.ace-tomorrow-night .ace_fold {background-color: #81A2BE;border-color: #C5C8C6}.ace-tomorrow-night .ace_entity.ace_name.ace_function,.ace-tomorrow-night .ace_support.ace_function,.ace-tomorrow-night .ace_variable {color: #81A2BE}.ace-tomorrow-night .ace_support.ace_class,.ace-tomorrow-night .ace_support.ace_type {color: #F0C674}.ace-tomorrow-night .ace_markup.ace_heading,.ace-tomorrow-night .ace_string {color: #B5BD68}.ace-tomorrow-night .ace_entity.ace_name.ace_tag,.ace-tomorrow-night .ace_entity.ace_other.ace_attribute-name,.ace-tomorrow-night .ace_meta.ace_tag,.ace-tomorrow-night .ace_string.ace_regexp,.ace-tomorrow-night .ace_variable {color: #CC6666}.ace-tomorrow-night .ace_comment {color: #969896}.ace-tomorrow-night .ace_markup.ace_underline {text-decoration: underline}.ace-tomorrow-night .ace_indent-guide {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWOQlVf8z7Bq1ar/AA/hBFp7egmpAAAAAElFTkSuQmCC) right repeat-y}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><style type="text/css" id="ki-hv8-hv"></style><style type="text/css" id="ki-hv8-hs"></style></head>
+<body class="projects show signed_in composer">
+
+
+
+<script src="./A Simple Counter _ Codecademy_files/composer-en-cb1153ae622b211f88ca5e0bc1b311dd.js" type="text/javascript"></script>
+
+
+<input type="hidden" id="data-source" value="db" class="ui-inited">
+
+<div data-react-class="ComposerHeader"><header data-reactroot="" data-react-composer-header="true" data-react-header="true" class="QgsK4-GrT7XEcjbiE5brI _9RjjtlrOAdA9EBvPL_TRL _2z8yk9wJIBm7T7DGuc15D3"><nav class="_1v-ies-YXNjFm80Rx9ZfRl undefined"><section class="_268VCkNMkLWAbM6AYwt5lJ _1TSi1ljG_AStYnh-VzwxTB"><div class="_1dLucO5eg5Z3EckRocSLlr"><a href="https://www.codecademy.com/" title="Codecademy" class="_5CcnXJOleQMNC8rlQjM8l"><img class="_3Q5JVWZE1ogewbODHQwYrH" src="./A Simple Counter _ Codecademy_files/logo--white.svg"></a></div></section><section class="_268VCkNMkLWAbM6AYwt5lJ _1CvruyUvv9YR-4CVe_7Yr1"><a class="_2FlS90Ay9D141--mDwDScE"><i class="lfsLmcXUGnI1VHuUbPxdm fcn-icon fcn-icon-arrowPrev"></i><!-- react-text: 10 -->A Simple Counter<!-- /react-text --></a></section><section class="_268VCkNMkLWAbM6AYwt5lJ _3lJzgiOI6ycnhgYAFtLbL8 _1NPboN27jOWx4c9f4B1FE2"><div class="_1dLucO5eg5Z3EckRocSLlr _1Qa6f0i_fU20CLu6Buuu6H"><div class="_25vsU5626KHao76QOF1VIK"><div class="_1u7qc75U3-7r361O2ucH0L _39A9Ej7SKg1foQYZE0c9-L nnWQYUYI47MeZXg1AR-eb ntJqfinTWlK3lQ9ZVK0PR"><span><div class="_2plg-KtLT-wKTSCZoDuTiB vbDr-ruHkGq0hDha1PYGH"><span class="new-cc-icon icon-bell"></span></div></span></div><!-- react-empty: 18 --></div></div><div class="_1dLucO5eg5Z3EckRocSLlr _1Qa6f0i_fU20CLu6Buuu6H"><div class="_25vsU5626KHao76QOF1VIK"><div id="dropdown-toggle" class="pRF57xQ9nS7aUfqy1rgOZ"><div class="IgqN9cxzno3sNuZrYz_Ds _3UUJxd0G7QtfvsHDoAXCiP _3UC7avWdcFEWts0grqhTMb"><img class="_1aIYyRAwdfnKc4d54n4T8l" src="./A Simple Counter _ Codecademy_files/a6e10e0104b55b88f7320d07677b6bd7"></div></div><!-- react-empty: 24 --></div></div></section></nav></header></div>
+
+
+<div class="ui-overlay ui-overlay--dark ui-overlay--lesson js-lesson-loading-overlay">
+  <img alt="Ajax-loader-large-white" class="loader" src="./A Simple Counter _ Codecademy_files/ajax-loader-large-white-1c1b99d848dcd43f870790a0b01002a9.gif">
+</div>
+<div>
+<div class="lesson-left-bar">
+  <div class="js-lesson-left-bar"><div class="lesson-nav ui-dropdown ui-dropdown--light ui-dropdown--checkpoints ui-dropdown--arrow-on-top js-checkpoints">
+  <div class="ui-dropdown__arrow__container">
+    <div class="ui-dropdown__arrow"></div>
+    <div class="ui-dropdown__arrow-border__container">
+      <div class="ui-dropdown__arrow-border"></div>
+    </div>
+  </div>
+
+  <div class="block-list ui-counter ui-counter--bold">
+    <a class="block-list__item ui-media ui-media--reverse lesson-nav__section js-section">
+      <div class="ui-media__image">
+        <div class="new-icon new-icon--small new-icon--section--completed"></div>
+      </div>
+      <div class="ui-media__main">
+        Create the HTML
+      </div>
+    </a>
+    <div class="js-section__content" data-index="0">
+      <div class="block-list lesson-nav__exercises">
+        <a class="block-list__item ui-media lesson-nav__exercise js-switch-checkpoint" data-index="0">
+          <div class="ui-media__image new-icon new-icon--small
+          
+             new-icon--checkpoint--completed
+            
+          ">
+          </div>
+          <div class="ui-media__main">
+            <div class="ui-counter__item">
+              Overview
+            </div>
+          </div>
+        </a>
+        <a class="block-list__item ui-media lesson-nav__exercise js-switch-checkpoint" data-index="1">
+          <div class="ui-media__image new-icon new-icon--small
+          
+             new-icon--checkpoint--completed
+            
+          ">
+          </div>
+          <div class="ui-media__main">
+            <div class="ui-counter__item">
+              Input Fields
+            </div>
+          </div>
+        </a>
+        <a class="block-list__item ui-media lesson-nav__exercise js-switch-checkpoint" data-index="2">
+          <div class="ui-media__image new-icon new-icon--small
+          
+             new-icon--checkpoint--completed
+            
+          ">
+          </div>
+          <div class="ui-media__main">
+            <div class="ui-counter__item">
+              Button Me Up
+            </div>
+          </div>
+        </a>
+        <a class="block-list__item ui-media lesson-nav__exercise js-switch-checkpoint" data-index="3">
+          <div class="ui-media__image new-icon new-icon--small
+          
+             new-icon--checkpoint--completed
+            
+          ">
+          </div>
+          <div class="ui-media__main">
+            <div class="ui-counter__item">
+              Hook Up the Label
+            </div>
+          </div>
+        </a>
+        <a class="block-list__item ui-media lesson-nav__exercise js-switch-checkpoint" data-index="4">
+          <div class="ui-media__image new-icon new-icon--small
+          
+             new-icon--checkpoint--completed
+            
+          ">
+          </div>
+          <div class="ui-media__main">
+            <div class="ui-counter__item">
+              Done with the HTML!
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <a class="block-list__item ui-media ui-media--reverse lesson-nav__section js-section is-active">
+      <div class="ui-media__image">
+      </div>
+      <div class="ui-media__main">
+        Coding the Counter in Javascript
+      </div>
+    </a>
+    <div class="js-section__content" data-index="1">
+      <div class="block-list lesson-nav__exercises">
+        <a class="block-list__item ui-media lesson-nav__exercise js-switch-checkpoint" data-index="0">
+          <div class="ui-media__image new-icon new-icon--small
+          
+             new-icon--checkpoint--completed
+            
+          ">
+          </div>
+          <div class="ui-media__main">
+            <div class="ui-counter__item">
+              Creating the Function
+            </div>
+          </div>
+        </a>
+        <a class="block-list__item ui-media lesson-nav__exercise js-switch-checkpoint" data-index="1">
+          <div class="ui-media__image new-icon new-icon--small
+          
+             new-icon--checkpoint--completed
+            
+          ">
+          </div>
+          <div class="ui-media__main">
+            <div class="ui-counter__item">
+              Adding to the quantity
+            </div>
+          </div>
+        </a>
+        <a class="block-list__item ui-media lesson-nav__exercise js-switch-checkpoint" data-index="2">
+          <div class="ui-media__image new-icon new-icon--small
+          
+             new-icon--checkpoint--completed
+            
+          ">
+          </div>
+          <div class="ui-media__main">
+            <div class="ui-counter__item">
+              What About Negatives?
+            </div>
+          </div>
+        </a>
+        <a class="block-list__item ui-media lesson-nav__exercise js-switch-checkpoint" data-index="3">
+          <div class="ui-media__image new-icon new-icon--small
+           new-icon--checkpoint--current
+">
+          </div>
+          <div class="ui-media__main">
+            <div class="ui-counter__item">
+              <strong>I Can Haz Negative?</strong>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <a class="block-list__item ui-media ui-media--reverse lesson-nav__section js-section">
+      <div class="ui-media__image">
+      </div>
+      <div class="ui-media__main">
+        Javascript, Meet HTML
+      </div>
+    </a>
+    <div class="js-section__content" data-index="2">
+      <div class="block-list lesson-nav__exercises">
+        <a class="block-list__item ui-media lesson-nav__exercise js-switch-checkpoint" data-index="0">
+          <div class="ui-media__image new-icon new-icon--small
+          
+            
+             new-icon--checkpoint
+          ">
+          </div>
+          <div class="ui-media__main">
+            <div class="ui-counter__item">
+              Getting/Setting Input Values
+            </div>
+          </div>
+        </a>
+        <a class="block-list__item ui-media lesson-nav__exercise js-switch-checkpoint" data-index="1">
+          <div class="ui-media__image new-icon new-icon--small
+          
+            
+             new-icon--checkpoint
+          ">
+          </div>
+          <div class="ui-media__main">
+            <div class="ui-counter__item">
+              Hook Up the Buttons
+            </div>
+          </div>
+        </a>
+        <a class="block-list__item ui-media lesson-nav__exercise js-switch-checkpoint" data-index="2">
+          <div class="ui-media__image new-icon new-icon--small
+          
+            
+             new-icon--checkpoint
+          ">
+          </div>
+          <div class="ui-media__main">
+            <div class="ui-counter__item">
+              Pass the Arguments
+            </div>
+          </div>
+        </a>
+        <a class="block-list__item ui-media lesson-nav__exercise js-switch-checkpoint" data-index="3">
+          <div class="ui-media__image new-icon new-icon--small
+          
+            
+             new-icon--checkpoint
+          ">
+          </div>
+          <div class="ui-media__main">
+            <div class="ui-counter__item">
+              Strings and Numbers
+            </div>
+          </div>
+        </a>
+        <a class="block-list__item ui-media lesson-nav__exercise js-switch-checkpoint" data-index="4">
+          <div class="ui-media__image new-icon new-icon--small
+          
+            
+             new-icon--checkpoint
+          ">
+          </div>
+          <div class="ui-media__main">
+            <div class="ui-counter__item">
+              Make it pretty
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="block-list__item">
+      <div class="lesson-nav__meta">Course by Adrian Redman</div>
+    </div>
+  </div>
+</div><div class="ui-overlay ui-overlay--dark js-checkpoints-overlay"></div>
+<div class="lesson-left-bar__header">
+
+  <div class="article__inner">
+    <div class="lesson__course-name one-line-text js-course-name">A Simple Counter</div>
+    <div class="lesson-left-bar__toggle js-toggle-left-bar">
+      <div class="new-icon--small new-icon--arrow-right"></div>
+    </div>
+  </div>
+</div>
+<div class="lesson-checkpoint__wrapper">
+  <div class="lesson-checkpoint nano has-scrollbar">
+    <div class="nano__content content" tabindex="0" style="right: -15px;">
+      <div class="lesson-checkpoint__inner">
+        <div class="article__inner">
+          <div class="article__header">
+            <div class="lesson-checkpoint__name">I Can Haz Negative?</div>
+          </div>
+          <div class="article__content">
+            <p>Well, negative numbers work but if this counter is counting quantities of things, negative numbers don't make sense. You can't very well order -3 apples.</p>
+
+          </div>
+        </div>
+        <div class="lesson-checkpoint__instructions">
+          <div class="article__inner lesson-checkpoint__instructions__header">
+            <div class="block-label--light-blue">Instructions</div>
+          </div>
+          <div class="article__inner">
+            <ol>
+<li>Let's add in a check to stop the number going below zero.</li>
+<li>Test the modified function to make sure that quantity never falls below zero.</li>
+</ol>
+
+              <div class="ui-accordian ui-accordian--lesson">
+                <div class="ui-accordian__inner">
+                  <a href="https://www.codecademy.com/courses/a-simple-counter/1/4#" class="ui-accordian__trigger ui-media" data-trigger-impression="true" data-utm-campaign="" data-utm-source="codecademy_platform" data-utm-medium="internal_ad_composer_hint" data-utm-content="">
+                    <div class="ui-media__image new-icon--small new-icon--center new-icon--circle--blue">?</div>
+                    <div class="ui-media__main">
+                      <span class="is-hidden-if-is-expanded"><b>Stuck?</b> Get a hint!</span>
+                      <span class="is-shown-if-is-expanded--inline"><b>Hint</b></span>
+                    </div>
+                  </a>
+                  <div class="ui-accordian__content has-markdown">
+
+                    <p>Use an <code class="java"><span class="keyword">if</span></code> statement to check if <code class="undefined">qty</code> is less than <code class="undefined">0</code>. If it is, set it to <code class="undefined">0</code>.</p>
+
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="pane"><div class="slider" style="height: 353px; top: 91px;"></div></div></div>
+</div>
+</div>
+    <div class="lesson-links">
+  <a target="_blank" class="lesson-links__link" href="https://www.codecademy.com/discourse_redirect/a-simple-counter/1">Q&amp;A Forum</a>
+  <a target="_blank" class="lesson-links__link" href="https://www.codecademy.com/glossary/html">Glossary</a>
+</div>
+</div>
+<div class="lesson-middle js-lesson-editor"><div class="lesson-file-tabs js-lesson-file-tabs"><div class="lesson-file-tabs__wrapper">
+  <div>
+<div class="lesson-file-tabs__tab js-file-tab tab cf active" data-type="script.js" data-state="active">
+  <div class="new-icon--small--center new-icon--lesson-file fl"></div>
+  <div class="fl">script.js</div>
+</div>  </div>
+  <div id="composer-view-project-button-for-narrow-screen">
+    <div class="actions-list actions-list--composer-tabs codebit-actions-management actions-list--individual-buttons">
+      <div>
+        <div class="js-view-project actions-list__button actions-entity has-hover ui-media">
+          <div class="ui-media__image actions-list__icon cc-icon">project</div>
+          <div class="ui-media__main actions-list__text">View Preview</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="lesson-ace-editor lesson-editor-width js-ace-editor orion-composer ace_editor ace-tomorrow-night ace_dark"><textarea class="ace_text-input" wrap="off" autocapitalize="off" spellcheck="false" style="opacity: 0; height: 19px; width: 7px; right: 474px; bottom: 300px;"></textarea><div class="ace_gutter"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="margin-top: 0px; height: 452px; width: 40px;"><div class="ace_gutter-cell" style="height: 19px;">1</div><div class="ace_gutter-cell" style="height: 19px;">2</div><div class="ace_gutter-cell" style="height: 19px;">3<span class="ace_fold-widget ace_start ace_open" style="height: 19px;"></span></div><div class="ace_gutter-cell" style="height: 19px;">4<span class="ace_fold-widget ace_start ace_open" style="height: 19px;"></span></div><div class="ace_gutter-cell" style="height: 19px;">5</div><div class="ace_gutter-cell" style="height: 19px;">6</div><div class="ace_gutter-cell" style="height: 19px;">7</div><div class="ace_gutter-cell" style="height: 19px;">8</div><div class="ace_gutter-cell" style="height: 19px;">9</div></div><div class="ace_gutter-active-line" style="top: 95px; height: 19px;"></div></div><div class="ace_scroller" style="left: 40px; right: 0px; bottom: 0px;"><div class="ace_content" style="margin-top: 0px; width: 520px; height: 452px; margin-left: 0px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 564px; visibility: visible;"></div></div><div class="ace_layer ace_marker-layer"><div class="ace_active-line" style="height:19px;top:95px;left:0;right:0;"></div><div class="ace_bracket ace_start" style="height:19px;width:7px;top:57px;left:116px;"></div></div><div class="ace_layer ace_text-layer" style="padding: 0px 4px;"><div class="ace_line_group"><div class="ace_line" style="height:19px"><span class="ace_storage ace_type">var</span>&nbsp;<span class="ace_identifier">qty</span>&nbsp;<span class="ace_keyword ace_operator">=</span>&nbsp;<span class="ace_constant ace_numeric">0</span><span class="ace_punctuation ace_operator">;</span></div></div><div class="ace_line_group"><div class="ace_line" style="height:19px"></div></div><div class="ace_line_group"><div class="ace_line" style="height:19px"><span class="ace_storage ace_type">function</span>&nbsp;<span class="ace_entity ace_name ace_function">modify_qty</span><span class="ace_paren ace_lparen">(</span><span class="ace_variable ace_parameter">val</span><span class="ace_paren ace_rparen">)</span>&nbsp;<span class="ace_paren ace_lparen">{</span></div></div><div class="ace_line_group"><div class="ace_line" style="height:19px">&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_keyword">while</span><span class="ace_paren ace_lparen">(</span><span class="ace_identifier">qty</span><span class="ace_keyword ace_operator">&gt;</span><span class="ace_constant ace_numeric">0</span><span class="ace_paren ace_rparen">)</span><span class="ace_paren ace_lparen">{</span></div></div><div class="ace_line_group"><div class="ace_line" style="height:19px">&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_identifier">qty</span>&nbsp;<span class="ace_keyword ace_operator">=</span>&nbsp;<span class="ace_identifier">qty</span>&nbsp;<span class="ace_keyword ace_operator">+</span>&nbsp;<span class="ace_identifier">val</span><span class="ace_punctuation ace_operator">;</span></div></div><div class="ace_line_group"><div class="ace_line" style="height:19px">&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_paren ace_rparen">}</span></div></div><div class="ace_line_group"><div class="ace_line" style="height:19px">&nbsp;&nbsp;&nbsp;&nbsp;</div></div><div class="ace_line_group"><div class="ace_line" style="height:19px">&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_keyword">return</span>&nbsp;<span class="ace_identifier">qty</span><span class="ace_punctuation ace_operator">;</span></div></div><div class="ace_line_group"><div class="ace_line" style="height:19px"><span class="ace_paren ace_rparen">}</span></div></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div class="ace_cursor" style="left: 39px; top: 95px; width: 7px; height: 19px;"></div></div></div></div><div style="height: auto; width: auto; top: -100px; left: -100px; visibility: hidden; position: fixed; overflow: visible; white-space: nowrap;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div><div class="ace_scrollbar" style="width: 20px; display: none; overflow-y: scroll; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 20px; height: 171px;"></div></div><div class="ace_scrollbar-h" style="height: 20px; display: none; overflow-x: scroll; left: 40px; right: 0px;"><div class="ace_scrollbar-inner" style="height: 20px; width: 520px;"></div></div><div class="ace_gutter-tooltip" style="display: none;"></div></div>
+<div class="file-container"></div></div>
+<div class="lesson-sidebar lesson-sidebar--composer-responsive js-lesson-sidebar show">
+  <div class="lesson-sidebar-container">
+    
+<div class="result-chrome mini-preview">
+  <div class="result-container frame-wrap js-frame-wrap cc-preview"><div class="cc-preview__overlay">
+  <div class="widget-spinner widget-spinner--small widget-spinner--blue" style="display: none;"></div>
+  <div class="cc-preview__controls">
+    <a class="js-preview-minimize cc-preview__control cc-preview__control--minimize"></a>
+  </div>
+</div>
+<div class="cc-preview__stuff"><iframe scrolling="no" src="./A Simple Counter _ Codecademy_files/index-e15cd898fa5906b22c02b7fc4cf8e509.html" style="transform: scale(1); width: 100%; height: 100%;"></iframe></div>
+</div>
+  <div class="js-codebit-actions cf">
+  <div class="editor-actions">
+
+     
+<div class="actions-list actions-list--composer-teal composer-actions-management actions-list--individual-buttons">
+
+
+
+
+    <a href="https://www.codecademy.com/courses/a-simple-counter/1/4" class="js-full-screen actions-list__button actions-entity has-hover ui-media">
+      <div class="ui-media__image actions-list__icon cc-icon">expand</div>
+      <div class="ui-media__main actions-list__text">Full Screen</div>
+</a></div>
+
+
+  </div>
+</div>
+
+</div>
+
+  <div class="result-chrome widget-err-console js-err-console is-hidden">
+  <div class="result-container__js-errors-console__msgs js-err-msgs"></div>
+</div>
+
+
+
+
+
+    <div id="js-glossary-flash-card" class="glossary-flash-card glossary-flash-card--hidden"></div>
+    <div id="js-backtest" class="backtest backtest--hidden"></div>
+  </div>
+</div>
+<div class="lesson-action-bar js-lesson-action-bar">
+  <div class="composer-bottom-bar lesson-action-bar__inner">
+  <div class="button-group--horizontal">
+    <a class="ui-button ui-button--medium ui-button--blue--on-dark ui-loading js-submit-code is-loading">
+      <div class="ui-loading__other">
+        Save &amp; Submit Code
+      </div>
+      <div class="ui-loading__image new-icon--small new-icon--gear--white loading-spin"></div>
+    </a>
+    <a class="ui-button ui-button--medium ui-button--transparent--on-dark js-reset-code reset">Reset Code</a>
+  </div>
+</div>
+<div class="lesson-action-bar__state lesson-action-bar__inner lesson-action-bar__inner--pass js-state--passed is-shown"><div class="lesson-action-bar__inner__wrapper">
+  <div class="ui-media">
+    <div class="ui-media__image new-icon--medium new-icon--state--passed"></div>
+    <div class="ui-media__main">
+
+
+
+
+            <span class="spacer--right">Congratulations, you've finished this section!</span>
+            <a class="ui-button ui-button--medium ui-button--green--on-dark js-next-section">Next: Javascript, Meet HTML<span style="font-weight: normal"></span>→</a>
+
+
+    </div>
+  </div>
+  <div class="close-icon close-success"></div>
+</div>
+</div>
+<div class="lesson__state lesson__state--failed js-state--failed"></div>
+<div class="lesson-action-bar__state lesson-action-bar__state--back lesson-action-bar__inner js-state--back">
+  <a class="ui-button ui-button--medium ui-button--gray--on-dark js-back-to-editor back-editor">Back to Editor</a>
+</div>
+</div>
+  <div class="full-preview js-full-preview">
+
+
+  <div class="full-preview__frame js-full-preview__frame">
+    <div class="full-preview__frame__wrap js-full-preview-container cc-preview"><div class="cc-preview__overlay">
+  <div class="widget-spinner widget-spinner--small widget-spinner--blue" style="display: none;"></div>
+  <div class="cc-preview__controls">
+    <a class="js-preview-minimize cc-preview__control cc-preview__control--minimize"></a>
+  </div>
+</div>
+<div class="cc-preview__stuff no-fadein"><iframe scrolling="no" src="./A Simple Counter _ Codecademy_files/index-e15cd898fa5906b22c02b7fc4cf8e509(1).html" style="transform: scale(1); width: 100%; height: 100%;"></iframe></div>
+</div>
+  </div>
+
+  <div class="full-preview__footer">
+    <div class="full-preview-bar">
+
+  <div class="full-preview-bar__cta">
+
+     
+
+            <button class="button full-preview-bar__button ui-button ui-button--medium ui-button--blue--on-light ui-loading js-full-preview__back" id="">
+      Back to editor
+    </button>
+
+
+    <div class="full-preview-bar__message js-message"></div>
+
+  </div>
+
+</div>
+
+  </div>
+
+</div>
+
+
+<!-- Facebook Publishing permissions form -->
+
+<form accept-charset="UTF-8" action="https://www.codecademy.com/users/562f8a8351b887aeea000315" class="edit_user" data-remote="true" id="enable-facebook-publishing" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" class="ui-inited"><input name="_method" type="hidden" value="put" class="ui-inited"><input name="authenticity_token" type="hidden" value="LAocGYBYe4mquOT5v07Yp8J5Kh2Y0qdLlErQ/Uf8zYg=" class="ui-inited"></div>
+  <input id="user_fb_pa" name="user[fb_pa]" type="hidden" value="true" class="ui-inited">
+</form><form accept-charset="UTF-8" action="https://www.codecademy.com/users/562f8a8351b887aeea000315" class="edit_user" data-remote="true" id="disable-facebook-publishing" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" class="ui-inited"><input name="_method" type="hidden" value="put" class="ui-inited"><input name="authenticity_token" type="hidden" value="LAocGYBYe4mquOT5v07Yp8J5Kh2Y0qdLlErQ/Uf8zYg=" class="ui-inited"></div>
+  <input id="user_fb_pa" name="user[fb_pa]" type="hidden" value="false" class="ui-inited">
+</form>
+
+</div>
+
+<div data-react-class="ComposerFooter"><nav data-reactroot="" class="_1v-ies-YXNjFm80Rx9ZfRl _3pjjMV98EFwbvZrHCH0Po7 _3hSi7vNbnXj2qtE273FgZJ"><section class="_268VCkNMkLWAbM6AYwt5lJ _1TSi1ljG_AStYnh-VzwxTB"><div class="_1dLucO5eg5Z3EckRocSLlr"><a href="https://www.codecademy.com/courses/a-simple-counter/1/4#" title="9. I Can Haz Negative?" data-cue="course-navigator" class="XASCwlM0KeU4uz_xyeBO2"><span class="_2WAzg0EBb2OeDAp9p3BrA2"></span><span data-cue="course-navigator" class="_3nyxvwo0k_bE0YlOSKnJet">9. I Can Haz Negative?</span></a></div></section><!-- react-empty: 7 --></nav></div>
+
+
+
+<script src="./A Simple Counter _ Codecademy_files/common-en-c2c4e21f7f650b28b527a71e08867ae9.js" type="text/javascript"></script>
+
+
+<script id="I18N" type="text/javascript">
+//<![CDATA[
+
+  var I18n = (window.I18n || {});
+  I18n.defaultLocale = "en";
+  I18n.fallbacks = true;
+  I18n.locale = "en";
+  I18n.missingTranslationPrefix = '';
+    I18n.missingBehaviour = 'guess';
+
+//]]>
+</script><script src="./A Simple Counter _ Codecademy_files/locale-en-e5bf685c400d795d0a8538ecd78173a7.js" type="text/javascript"></script>
+
+
+  <script src="./A Simple Counter _ Codecademy_files/common-db66576f48cac825e0e5cd640bbf29a3.js" type="text/javascript"></script>
+  <script src="./A Simple Counter _ Codecademy_files/composer_controller-75d9b4e47d030b211a73fd7b622fb2b3.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+//<![CDATA[
+
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.0.1";
+      analytics.load("awTEDiBEJ130cCHG1N74clKHGM3FLNzQ");
+      analytics.page();
+    }}();
+
+//]]>
+</script>
+
+
+
+
+  <!-- start Mixpanel -->
+  <script type="text/javascript">
+    (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+    for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+    mixpanel.init("cae5cbbe77db18d216b3995c711c4077");
+  </script>
+  <!-- end Mixpanel -->
+
+
+
+
+<!-- Load relevant javascript controller -->
+<script type="text/javascript">
+  require(['common', 'controllers/composer_controller'], function (common, controller) {
+    if (common) common.init();
+    if (controller) controller['init']();
+    
+  });
+</script>
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./A Simple Counter _ Codecademy_files/bz-D0tzmBsw.html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script type="text/javascript">
+//<![CDATA[
+
+var FB_APP_ID = '212500508799908';
+window.fbAsyncInit = function() {
+  var FB = (window.FB || undefined);
+  if (FB) {
+    FB.init({
+      appId      : FB_APP_ID
+    , channelUrl : window.root_url+'/channel.html'
+    , status     : true
+    , cookie     : true
+    , xfbml      : true
+    , version    : 'v2.2'
+    });
+  }
+};
+(function(d){
+  var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement('script'); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/sdk.js";
+  ref.parentNode.insertBefore(js, ref);
+}(document));
+
+//]]>
+</script>
+
+
+<!-- Overlay loader. Deprecated by rebrand? -->
+<script>
+  var overlay = document.getElementById('overlay');
+  if (overlay && overlay.children.length > 0) {
+    overlay.style.cssText = "display: block;";
+  }
+</script>
+
+    <script src="./A Simple Counter _ Codecademy_files/vendor.bundle-9b2b8178546c308db26b616d59e45bc1.js" type="text/javascript"></script>
+    <script src="./A Simple Counter _ Codecademy_files/composer.bundle-95a7a74d1cfcdb765212acc732d98730.js" type="text/javascript"></script>
+
+
+</body></html>

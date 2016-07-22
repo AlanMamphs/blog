@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <div class="container-fluid">
+
+                <div class="row">
+                    
+                        <div class="col-md-4 col-sm-4 col-xs-4"> 
+                            <a href="/profile" class="btn" style="display:block">Profile</a>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <a href="/newpost" class="btn" style="display:block">New Post</a>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <span href="#" class="btn" style="display:block">Blog</span>
+                        </div>
+                    
+                  
+                </div>
+
+  {% for b in blog %}   
+ 
+       <div class="row">             
+           <div class="col-md-2">
+                           
+                                
+           </div>
+
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="blog">
+                 <div class='blog-heading'>
+                    <div class="blog-subject">
+                      {{b.subject}}
+                    </div>     
+                      <div class="blog-time">
+                        {{b.created.strftime("%b %d %Y")}}
+                      </div>
+                  </div>
+                   
+                  <div class = "blog-body">
+                    <pre>
+                      {{b.content | safe}}
+                    </pre>
+                  </div>                   
+                </div>
+              </div>
+           </div>
+           <div data-update='main.py' data-refresh-interval='500' class="col-md-2 col-md-offset-2">
+              <form method = 'post'>
+                        
+              <input type="text" hidden='true' name='post_id' value={{b.key().id()}}>
+              <span id='qty'>{{b.likes}}</span>
+              <button type='submit' class="btn btn-info" name='like'>like</button>
+              </form>
+                      
+                      
+
+           </div>
+       </div>
+       {% for comment in comments%}
+          {% if comment.postid == b.key().id()%}
+       <div class="row">
+          <div class="col-md-2"></div>
+
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-8 ">
+                <strong>{{comment.username}}</strong>
+              </div>
+
+            </div>
+            <hr>
+
+            <div class="col-md-8 form-group">
+                {{comment.comment}}
+            </div>
+
+          </div> 
+          <div class="col-md-8 col-md-offset-2">
+            <hr>
+          </div>
+
+
+          
+
+       </div>
+
+          {% endif %}
+        {% endfor %}
+       <div class='row'>
+         <div class="col-md-2"></div>
+         <div class="col-md-8">
+           <form method="POST" role="form">
+                <legend>Comments</legend>              
+                
+                <div class="form-group">
+                  <label for="blog">Message</label>
+                  <textarea id="blog" class="form-control" rows = '10' name ='comment'>{{content}}</textarea>
+                </div>
+                  <div class = 'error'>
+                    {{error}}
+                  </div>
+                  <input type="text" hidden='true' name='post_id' value={{b.key().id()}}>
+                  <input type="submit" class="btn btn-primary" value="Submit">
+                  
+              </form>
+         </div>
+       </div>
+       
+  
+  {% endfor %}
+  </div>
+{% endblock %}
+
+
